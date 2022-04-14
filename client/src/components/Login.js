@@ -4,44 +4,62 @@ import "./Login.css";
 const Login = () => {
 
   return (
-    <div class="wrapper">
-      <div class="logo">
-        {" "}
-        <img
-          src="https://justcreative.com/wp-content/uploads/2019/03/wolf-1.png.webp"
-          alt=""
-        />{" "}
-      </div>
-      <div class="text-center mt-4 name"> Login </div>
-      <form class="p-3 mt-3">
-        <div class="form-field d-flex align-items-center">
-          {" "}
-          <span class="far fa-user"></span>{" "}
-          <input
-            type="text"
-            name="userName"
-            id="userName"
-            placeholder="Username"
-          />{" "}
+    <div>
+      <div className="section">
+        <div className="container">
+          <div className="row full-height justify-content-center">
+            <div className="col-12 text-center align-self-center py-5">
+              <div className="section pb-5 pt-5 pt-sm-2 text-center">
+                <div className="card-3d-wrap mx-auto">
+                  <div className="card-3d-wrapper">
+                    <div className="card-front">
+                      <div className="center-wrap">
+                        <div className="section text-center">
+                          <h4 className="mb-4 pb-3">Login</h4>
+                          <div className="form-group">
+                            <input
+                              type="email"
+                              name="logemail"
+                              className="form-style"
+                              placeholder="Your Email"
+                              id="logemail"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-at"></i>
+                          </div>
+                          <div class="form-group mt-2">
+                            <input
+                              type="password"
+                              name="logpass"
+                              className="form-style"
+                              placeholder="Your Password"
+                              id="logpass"
+                              autocomplete="off"
+                            />
+                            <i class="input-icon uil uil-lock-alt"></i>
+                          </div>
+                          <a href="#" class="btn mt-4">
+                            submit
+                          </a>
+                          <p className="mb-0 mt-4 text-center">
+                            <a href="#0" class="link">
+                              Forgot your password?
+                            </a>{" "}
+                            or
+                            <a href="#0"> Register</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-field d-flex align-items-center">
-          {" "}
-          <span class="fas fa-key"></span>{" "}
-          <input
-            type="password"
-            name="password"
-            id="pwd"
-            placeholder="Password"
-          />{" "}
-        </div>{" "}
-        <button class="btn mt-3">Login</button>
-      </form>
-      <div class="text-center fs-6">
-        {" "}
-        <a href="#">Forget password?</a> or <a href="#">Sign up</a>{" "}
       </div>
     </div>
   );
-}
+};
 
 export default Login;
