@@ -6,7 +6,7 @@ module.exports = multer({
   fileFilter: (req, file, cb)=>{
     let ext = path.extname(file.originalname);
     // ganti di bawah sesuai file yang mau di upload JPG, mp4, dll
-    if (ext !== ".mp4"){
+    if (ext !== ".mp4" && ext !== ".mkv" && ext !== "webm"){
       cb(new Error("File Type is not supported"), false);
       return;
     }
