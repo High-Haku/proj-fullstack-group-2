@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+// import { useDispatch } from "react-redux";
+import { Button } from "react-bootstrap";
 import "./Register.css";
 
-function Register() {
+const Register = () => {
+  // const dispatch = useDispatch();
+
+  // const [user, setUser] = useState({
+  //   username : "",
+  //   email: "",
+  //   password: "",
+  // });
+
+  // const handleChange = (e) => {
+  //   setUser(()=>({
+  //     ...user,
+  //     [e.target.name]: e.target.value
+  //   }))
+  // }
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   dispatch(userRegister({username: username, email: email, password: password}))
+  // }
+
   return (
     <div>
       <div className="section">
@@ -28,39 +51,41 @@ function Register() {
                           <div className="form-group">
                             <input
                               type="text"
-                              name="logname"
+                              name="username"
                               className="form-style"
                               placeholder="Your Full Name"
-                              id="logname"
+                              id="username"
                               autocomplete="off"
+                              // value={user.username}
+                              // onChange={handleChange}
                             />
-                            <i className="input-icon uil uil-user"></i>
                           </div>
                           <div className="form-group mt-2">
                             <input
                               type="email"
-                              name="logemail"
+                              name="email"
                               className="form-style"
                               placeholder="Your Email"
-                              id="logemail"
+                              id="email"
                               autocomplete="off"
+                              // value={user.email}
+                              // onChange={handleChange}
                             />
-                            <i class="input-icon uil uil-at"></i>
                           </div>
                           <div class="form-group mt-2">
                             <input
                               type="password"
-                              name="logpass"
+                              name="password"
                               className="form-style"
                               placeholder="Your Password"
-                              id="logpass"
+                              id="password"
                               autocomplete="off"
+                              // value={user.email}
+                              // onChange={handleChange}
                             />
-                            <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a href="#" class="btn mt-4">
-                            submit
-                          </a>
+                          <br />
+                          <Button>Submit</Button>
                         </div>
                       </div>
                     </div>
@@ -71,39 +96,41 @@ function Register() {
                           <div className="form-group">
                             <input
                               type="text"
-                              name="logname"
+                              name="username"
                               className="form-style"
                               placeholder="Your Full Name"
-                              id="logname"
+                              id="username"
                               autocomplete="off"
+                              // value={user.username}
+                              // onChange={handleChange}
                             />
-                            <i className="input-icon uil uil-user"></i>
                           </div>
                           <div className="form-group mt-2">
                             <input
                               type="email"
-                              name="logemail"
+                              name="email"
                               className="form-style"
                               placeholder="Your Email"
-                              id="logemail"
+                              id="email"
                               autocomplete="off"
+                              // value={user.email}
+                              // onChange={handleChange}
                             />
-                            <i class="input-icon uil uil-at"></i>
                           </div>
-                          <div className="form-group mt-2">
+                          <div class="form-group mt-2">
                             <input
                               type="password"
-                              name="logpass"
+                              name="password"
                               className="form-style"
                               placeholder="Your Password"
                               id="logpass"
                               autocomplete="off"
+                              // value={user.email}
+                              // onChange={handleChange}
                             />
-                            <i className="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a href="#" className="btn mt-4">
-                            submit
-                          </a>
+                          <br />
+                          <Button>Submit</Button>
                         </div>
                       </div>
                     </div>
@@ -116,6 +143,6 @@ function Register() {
       </div>
     </div>
   );
-}
+};
 
 export default Register;
