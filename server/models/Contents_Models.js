@@ -3,25 +3,29 @@ const mongoose = require("mongoose")
 const ContentsSchema = new mongoose.Schema({
     title:{
         type: String,
-        required: true
+        required: true,
+        default: ""
     },
     description:{
         type: String,
-        required: true
+        required: true,
+        default: ""
     },
     video:{
         type: String,
         required: true
     },
+    cloudinaryID:{
+        type: String,
+        required: true
+    },
     // userID: {
     //     type: mongoose.Types.ObjectId,
-    //     ref: "users",
-    //     required: true
+    //     ref: "users"
     // },
     // reward: {
     //     type: mongoose.Types.ObjectId,
-    //     ref: "rewards",
-    //     required: true
+    //     ref: "rewards"
     // },
     category: {
         type: String,
