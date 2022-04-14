@@ -12,13 +12,15 @@ db.then(() => console.log("success connect to mongoose"))
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-    res.json("Welcome to API Pitching APP")
+  res.json("Welcome to API Pitching APP")
 });
 
 app.use(allRouter)
 
 app.listen(PORT, () => {
-    console.log("Server running on PORT", PORT);
+  console.log("Server running on PORT", PORT);
 });
