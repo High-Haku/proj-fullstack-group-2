@@ -7,6 +7,8 @@ const {registerUser, loginUser} = require("../controllers/Users_Controllers")
 const rewardsRouter = require("./rewards.router");
 const transactionsRouter = require("./transactions.router");
 
+
+
 router.post("/login", loginUser)
 router.post("/register", registerUser)
 
@@ -16,5 +18,4 @@ router.use("/transactions", transactionsRouter);
 
 router.use(authenticateJWT)
 router.use("/users", usersRouter)
-
 module.exports = router

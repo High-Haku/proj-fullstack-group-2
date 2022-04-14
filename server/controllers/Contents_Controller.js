@@ -1,5 +1,5 @@
 const res = require("express/lib/response");
-const ContentsModel = require("../models/Contents_Models");
+const ContentsModel = require("../models/Contents_Models")
 const cloudinary = require("../config/cloudinary")
 const upload = require("../config/multer")
 
@@ -17,13 +17,12 @@ module.exports = {
     }
   },
 
-  addContent: async (req,res) => {
-    try{
-      const result= await cloudinary.uploader.upload(req.file.path)
+  addContent: async (req, res) => {
+    try {
+      const result = await cloudinary.uploader.upload(req.file.path)
       res.json(result)
-    }catch (err) {
-      console.log(err)
+    } catch (error) {
+      console.log(error)
     }
-}
-
+  }
 }
