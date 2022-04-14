@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 import "./Login.css";
 
 const Login = () => {
@@ -19,32 +20,28 @@ const Login = () => {
                           <div className="form-group">
                             <input
                               type="email"
-                              name="logemail"
+                              name="email"
                               className="form-style"
                               placeholder="Your Email"
-                              id="logemail"
+                              id="email"
                               autocomplete="off"
                             />
-                            <i class="input-icon uil uil-at"></i>
                           </div>
                           <div class="form-group mt-2">
                             <input
                               type="password"
-                              name="logpass"
+                              name="password"
                               className="form-style"
                               placeholder="Your Password"
-                              id="logpass"
+                              id="password"
                               autocomplete="off"
                             />
-                            <i class="input-icon uil uil-lock-alt"></i>
                           </div>
-                          <a href="#" class="btn mt-4">
-                            submit
-                          </a>
+                          <Button>Submit</Button>
                           <p className="mb-0 mt-4 text-center">
                             <a href="#0" class="link">
                               Forgot your password?
-                            </a>{" "}
+                            </a>
                             or
                             <a href="#0"> Register</a>
                           </p>
