@@ -17,6 +17,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         enum: ["admin", "user", "pitcher"],
         required: true
+    },
+    content:{
+        type: mongoose.Types.ObjectId,
+        ref: "contents"
     }
 })
 
