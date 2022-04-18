@@ -5,7 +5,7 @@ import "./ContentDetail.css";
 function ContentDetail() {
   return (
     <div>
-      <Container className="bootdey mt-5">
+      <Container className="bootdey pt-5">
         <section className="panel">
           <Row>
             <Col className="col-md-6">
