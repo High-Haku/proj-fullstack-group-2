@@ -1,13 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Tes from "./components/tes"
+import Rewards from './components/Rewards'
 import Register from "./components/Register"
+import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      <Register/>
+    <div>
+      <Rewards />
     </div>
   );
 }
