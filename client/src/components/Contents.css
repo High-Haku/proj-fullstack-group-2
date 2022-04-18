@@ -1,0 +1,12 @@
+#divBorder {
+  border-style: solid;
+  border-color: #41548a;
+  border-width: 25px ;
+  border-radius: 8px;
+  box-shadow: #4d4d4d 10px 10px 10px;
+  /* border-image-source: url("https://w.wallhaven.cc/full/28/wallhaven-285xwy.jpg");
+  border-image-width: 40px;
+  border-image-slice: 100;
+  border-image-repeat: repeat; */
+}
+

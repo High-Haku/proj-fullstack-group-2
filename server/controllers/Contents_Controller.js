@@ -6,7 +6,8 @@ const upload = require("../config/multer");
 
 module.exports = {
   getAllContent: async (req, res) => {
-    const contents = await Contents.find({}, "-__v");
+    const contents = await Contents.find({}, "-__v")
+    .populate("reward userID","-content -__v")
 
     try {
       res.json({
@@ -43,6 +44,7 @@ module.exports = {
 
   getById: async (req, res) => {
     const contents = await Contents.findById(req.params.id, "-__v")
+    .populate("reward userID","-content -__v")
       
     try {
       res.json({
