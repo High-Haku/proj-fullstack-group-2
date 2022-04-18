@@ -11,5 +11,6 @@ router.get("/:id", getById)
 router.put("/:id", editContent)
 router.delete("/:id", deleteContent)
 router.post("/create-a-project",upload.single("video"), addContent)
-router.use(adminRequired)
+
+
 module.exports = router

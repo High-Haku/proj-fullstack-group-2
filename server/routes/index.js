@@ -12,7 +12,7 @@ const transactionsRouter = require("./transactions.router");
 router.post("/login", loginUser)
 router.post("/register", registerUser)
 
-router.use("/video", contentRouter)
+router.use("/videos", contentRouter)
 router.use("/rewards", rewardsRouter);
 router.use("/transactions", transactionsRouter);
 

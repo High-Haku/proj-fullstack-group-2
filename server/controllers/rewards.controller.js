@@ -26,7 +26,10 @@ module.exports = {
     const data = req.body;
 
     try {
-      await Rewards.create(data);
+      await Rewards.create(data)
+      res.json({
+        message: "Reward Created"
+      })
     } catch (error) {
       console.log(error.message);
     }
