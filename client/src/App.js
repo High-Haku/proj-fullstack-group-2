@@ -1,13 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Tes from "./components/tes"
 import Register from "./components/Register"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Contents from './components/Contents';
 
 function App() {
   return (
     <div className="App">
-      <Register/>
+      <Contents/>
     </div>
   );
 }
