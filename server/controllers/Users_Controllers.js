@@ -6,7 +6,8 @@ const jwt = require("jsonwebtoken");
 
 module.exports = {
   getAllUsers: async (req, res) => {
-    const users = await UserModel.find({}, "-__v");
+    const users = await UserModel.find({}, "-__v")
+    .populate("content", "-__v")
 
     try {
       res.json({
@@ -19,7 +20,8 @@ module.exports = {
   },
 
   getUsersById: async (req, res) => {
-    const users = await UserModel.findById(req.params.id, "-__v");
+    const users = await UserModel.findById(req.params.id, "-__v")
+    .populate("content", "-__v")
 
     try {
       res.json({

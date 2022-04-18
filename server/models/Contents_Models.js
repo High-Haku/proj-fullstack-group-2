@@ -37,24 +37,24 @@ const ContentsSchema = new mongoose.Schema({
   ],
 });
 
-// booksSchema.post("save", async (doc) => {
+// ContentsSchema.post("save", async (doc) => {
 //     const Rewards = require("./Rewards");
 //     const UserModel = require("./Users_Models");
 
 //     try {
-//       if (doc.writer) {
-//         const writer = await Writers.findById(doc.writer);
-//         await Writers.updateOne(
-//           { _id: doc.writer },
-//           { books: [...writer.books, doc._id] }
+//       if (doc.userID) {
+//         const userID = await UserModel.findById(doc.userID);
+//         await UserModel.updateOne(
+//           { _id: doc.userID },
+//           { users: [...userID.users, doc._id] }
 //         );
 //       }
 
-//       if (doc.publisher) {
-//         const publisher = await Publishers.findById(doc.publisher);
-//         await Publishers.updateOne(
-//           { _id: doc.publisher },
-//           { books: [...publisher.books, doc._id] }
+//       if (doc.reward) {
+//         const reward = await Rewards.findById(doc.reward);
+//         await Rewards.updateOne(
+//           { _id: doc.reward },
+//           { users: [...reward.users, doc._id] }
 //         );
 //       }
 //     } catch (error) {
