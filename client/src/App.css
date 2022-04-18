@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  /* background-image: linear-gradient(#f1f1f1,#282c34); */
 }
 
 .App-logo {
@@ -12,6 +17,27 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #41548a; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 
 .App-header {
   background-color: #282c34;
@@ -35,4 +61,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.Container {
+  width: max-content;
 }

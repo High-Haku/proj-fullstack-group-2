@@ -5,7 +5,7 @@ const rewardsSchema = new mongoose.Schema({
   description: { type: String, required: true },
   reward: { type: String, required: true },
   price: { type: Number, required: true},
-  post: { type: mongoose.Types.ObjectId, ref: "posts", required: true}
+  content: { type: mongoose.Types.ObjectId, ref: "contents"}
 })
 
 const Rewards = mongoose.model("rewards", rewardsSchema);
