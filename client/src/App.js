@@ -7,6 +7,7 @@ import Contents from './components/Contents';
 import Rewards from './components/Rewards';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
+import NotFound from './components/NotFound';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/support" element={<Rewards />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
