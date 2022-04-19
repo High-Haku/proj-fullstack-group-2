@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
 import "./Register.css";
+import { CloudUploadOutlined } from "@ant-design/icons/lib/icons";
 
 const Register = () => {
   // const dispatch = useDispatch();
@@ -32,22 +33,12 @@ const Register = () => {
           <div className="row full-height justify-content-center">
             <div className="col-12 text-center align-self-center py-5">
               <div className="section pb-5 pt-5 pt-sm-2 text-center">
-                <h3 className="mb-0 pb-3">
-                  <span>Register as</span>
-                </h3>
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  id="reg-log"
-                  name="reg-log"
-                />
-                <label for="reg-log"></label>
                 <div className="card-3d-wrap mx-auto">
                   <div className="card-3d-wrapper">
                     <div className="card-front">
                       <div className="center-wrap">
                         <div className="section text-center">
-                          <h4 className="mb-4 pb-3">User</h4>
+                          <h3 id="title" className="mb-4 pb-3"><CloudUploadOutlined /> Sign up</h3>
                           <div className="form-group">
                             <input
                               type="text"
@@ -55,7 +46,7 @@ const Register = () => {
                               className="form-style"
                               placeholder="Your Full Name"
                               id="username"
-                              autocomplete="off"
+                              autoComplete="off"
                               // value={user.username}
                               // onChange={handleChange}
                             />
@@ -67,70 +58,25 @@ const Register = () => {
                               className="form-style"
                               placeholder="Your Email"
                               id="email"
-                              autocomplete="off"
+                              autoComplete="off"
                               // value={user.email}
                               // onChange={handleChange}
                             />
                           </div>
-                          <div class="form-group mt-2">
+                          <div className="form-group mt-2">
                             <input
                               type="password"
                               name="password"
                               className="form-style"
                               placeholder="Your Password"
                               id="password"
-                              autocomplete="off"
+                              autoComplete="off"
                               // value={user.email}
                               // onChange={handleChange}
                             />
                           </div>
                           <br />
-                          <Button>Submit</Button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="card-back">
-                      <div className="center-wrap">
-                        <div className="section text-center">
-                          <h4 className="mb-4 pb-3">Pitcher</h4>
-                          <div className="form-group">
-                            <input
-                              type="text"
-                              name="username"
-                              className="form-style"
-                              placeholder="Your Full Name"
-                              id="username"
-                              autocomplete="off"
-                              // value={user.username}
-                              // onChange={handleChange}
-                            />
-                          </div>
-                          <div className="form-group mt-2">
-                            <input
-                              type="email"
-                              name="email"
-                              className="form-style"
-                              placeholder="Your Email"
-                              id="email"
-                              autocomplete="off"
-                              // value={user.email}
-                              // onChange={handleChange}
-                            />
-                          </div>
-                          <div class="form-group mt-2">
-                            <input
-                              type="password"
-                              name="password"
-                              className="form-style"
-                              placeholder="Your Password"
-                              id="logpass"
-                              autocomplete="off"
-                              // value={user.email}
-                              // onChange={handleChange}
-                            />
-                          </div>
-                          <br />
-                          <Button>Submit</Button>
+                          <Button id="btn-regis">Submit</Button>
                         </div>
                       </div>
                     </div>
