@@ -1,12 +1,11 @@
 import "./Contents.css";
+import React, { useEffect } from "react";
 import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import VideoPlayerFunction from "../Config/CloudinaryVideoPLayer";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
-import { LikeOutlined } from "@ant-design/icons";
-import axios from "axios";
-import { useEffect, useState } from "react";
-
+import { getAllContents } from "../redux/actions/contentsActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const ColoredLine = ({ color }) => (
   <hr
@@ -18,48 +17,46 @@ const ColoredLine = ({ color }) => (
   />
 );
 
+const videoOptions = {
+  cloudName: "jovitoaddo",
+  publicId: "cptvg3z5b5mcjs1gquap",
+};
+
 function Contents() {
-// const [allVids, setAllVids] = useState([])
+  const dispatch = useDispatch();
+  const contents = useSelector((state) => state.contents);
+  console.log(contents);
 
-// useEffect(async() => {
-//   const result = axios.get("localahost:5000/video");
-//   setAllVids(result.data);
-
-// }, [])
-
-
-
-  const videoOptions = {
-    publicId: `cptvg3z5b5mcjs1gquap`
-  };
+  useEffect(() => {
+    dispatch(getAllContents());
+  }, [dispatch]);
 
   return (
     <div>
       <Container fluid style={{}}>
         <Row className="pt-5 d-flex text-center">
           <Col />
+          {console.log(contents.data)}
           <Col id="divBorder" lg={7} style={{}} className="">
-            <Row>
-              <Row className="p-5">
-                <Col>
-                    <VideoPlayerFunction options={videoOptions} />
-                </Col>
-                <Col>
-                  <Button
-                    id="button-exp"
-                    className="rounded-circle"
-                    style={{ position: "absolute" }}
-                  >
-                    <LikeOutlined />
-                  </Button>
-                </Col>
-              </Row>
-              <ColoredLine color="grey" />
-            </Row>
+            
+                <Row>
+                  <Row className="p-5">
+                    <Col>
+                      <VideoPlayerFunction options={videoOptions} />
+                    </Col>
+                    <Col>
+                      <Button style={{ position: "relative", top: "700px" }}>
+                        Like
+                      </Button>
+                    </Col>
+                  </Row>
+                  <ColoredLine color="grey" />
+                </Row>
+              
+  
             <Col />
           </Col>
           <Col />
-
           <Col
             lg={3}
             style={{
