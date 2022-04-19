@@ -48,6 +48,12 @@ function Contents() {
                       <Button style={{ position: "relative", top: "700px" }}>
                         Like
                       </Button>
+                      <Button style={{ position: "relative", top: "700px" }}>
+                        Detail
+                      </Button>
+                      <Button style={{ position: "relative", top: "700px" }}>
+                        Share
+                      </Button>
                     </Col>
                   </Row>
                   <ColoredLine color="grey" />
