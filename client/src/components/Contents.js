@@ -40,9 +40,9 @@ function Contents() {
             {contents.data.map(content => {
               return (
                 <Row key={content._id}>
-                  <Row className="p-5">
+                  <Row >
                     <Col>
-                      <video src={content.video} autoPlay controls muted />
+                      <video src={content.video} controls muted />
                     </Col>
                     <Col>
                       <Button style={{ position: "relative", top: "700px" }}>
@@ -55,7 +55,7 @@ function Contents() {
               )
             })}
             <Col />
-          </Col> }
+          </Col>}
           <Col />
 
           <Col
@@ -68,7 +68,7 @@ function Contents() {
               // boxShadow: "10px 10px 10px 10px #888888",
               backgroundColor: "white",
             }}
-            className="rounded d-flex justify-content-center sticky-top overflow-auto"
+            className="rounded d-flex justify-content-center sticky-top pt-5 overflow-auto"
           >
             <Row style={{ height: "20px" }}>
               <Col id="divSide"
