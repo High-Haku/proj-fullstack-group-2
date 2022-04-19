@@ -1,7 +1,7 @@
 import "./Contents.css";
 import React, { useEffect } from "react";
 import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 import VideoPlayerFunction from "../Config/CloudinaryVideoPLayer";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { getAllContents } from "../redux/actions/contentsActions";
@@ -36,13 +36,13 @@ function Contents() {
       <Container fluid style={{}}>
         <Row className="pt-5 d-flex text-center">
           <Col />
-          {console.log(contents.data)}
-          <Col id="divBorder" lg={7} style={{}} className="">
-            
-                <Row>
+          {contents.data === undefined ? null : <Col id="divBorder" lg={7} style={{}} className="">
+            {contents.data.map(content => {
+              return (
+                <Row key={content._id}>
                   <Row className="p-5">
                     <Col>
-                      <VideoPlayerFunction options={videoOptions} />
+                      <video src={content.video} autoPlay controls muted />
                     </Col>
                     <Col>
                       <Button style={{ position: "relative", top: "700px" }}>
@@ -52,10 +52,10 @@ function Contents() {
                   </Row>
                   <ColoredLine color="grey" />
                 </Row>
-              
-  
+              )
+            })}
             <Col />
-          </Col>
+          </Col> }
           <Col />
           <Col
             lg={3}

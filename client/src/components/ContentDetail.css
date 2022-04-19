@@ -1,19 +1,25 @@
-.panel {
-    border: none;
-    box-shadow: none;
+#left-col {
+    display: inline-block;
+    text-align: right;
 }
 
-.panel-heading {
-    border-color:#eff2f7 ;
-    font-size: 16px;
-    font-weight: 300;
+#mid-col {
+    height: 800px;
+    position: relative;
 }
 
-.panel-title {
-    color: #2A3542;
-    font-size: 14px;
-    font-weight: 400;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
+#right-col {
+    border-radius: 25px;
+    border-style: solid;
+    border-color: gray;
+    border-width: 10px;
+    height:fit-content;
+    box-shadow: 10px 10px 5px
 }
+
+#btn-group {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+

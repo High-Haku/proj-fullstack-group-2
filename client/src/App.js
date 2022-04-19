@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Register from "./components/Register"
 import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
