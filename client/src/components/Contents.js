@@ -1,9 +1,11 @@
 import "./Contents.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import VideoPlayerFunction from "../Config/CloudinaryVideoPLayer";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
+import { getAllContents } from "../redux/actions/contentsActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const ColoredLine = ({ color }) => (
   <hr
@@ -17,55 +19,43 @@ const ColoredLine = ({ color }) => (
 
 const videoOptions = {
   cloudName: "jovitoaddo",
-  publicId: "cptvg3z5b5mcjs1gquap",
+  publicId: "",
 };
 
 function Contents() {
+  const dispatch = useDispatch();
+  const contents = useSelector((state) => state.contents);
+  console.log(contents.data);
+
+  useEffect(() => {
+    dispatch(getAllContents());
+  }, [dispatch]);
+
   return (
     <div>
       <Container fluid style={{}}>
         <Row className="pt-5 d-flex text-center">
           <Col />
           <Col id="divBorder" lg={7} style={{}} className="">
-            <Row>
-              <Row className="p-5">
-                <Col>
-                  <VideoPlayerFunction options={videoOptions} />
-                </Col>
-                <Col>
-                  <Button style={{ position: "relative", top: "700px" }}>
-                    Like
-                  </Button>
-                </Col>
-              </Row>
-              <ColoredLine color="grey" />
-            </Row>
-            <Row>
-              <Row className="p-5">
-                <Col>
-                  <VideoPlayerFunction options={videoOptions} />
-                </Col>
-                <Col>
-                  <Button style={{ position: "relative", top: "700px" }}>
-                    Like
-                  </Button>
-                </Col>
-              </Row>
-              <ColoredLine color="grey" />
-            </Row>
-            <Row>
-              <Row className="p-5">
-                <Col>
-                  <VideoPlayerFunction options={videoOptions} />
-                </Col>
-                <Col>
-                  <Button style={{ position: "relative", top: "700px" }}>
-                    Like
-                  </Button>
-                </Col>
-              </Row>
-              <ColoredLine color="grey" />
-            </Row>
+            {contents.data.map(content => {
+              return (
+                <Row key={content._id}>
+                  <Row className="p-5">
+                    <Col>
+                      <VideoPlayerFunction options={videoOptions.publicId = content.cloudinaryID} />
+                    </Col>
+                    <Col>
+                      <Button style={{ position: "relative", top: "700px" }}>
+                        Like
+                      </Button>
+                    </Col>
+                  </Row>
+                  <ColoredLine color="grey" />
+                </Row>
+
+              )
+            })}
+
             <Col />
           </Col>
           <Col />

@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './Rewards.css'
+import { getAllContents } from '../redux/actions/contentsActions'
 
 function Rewards() {
+  const dispatch = useDispatch();
+  const contents = useSelector((state) => state.contents)
+  console.log(contents);
+
+  useEffect(() => {
+    dispatch(getAllContents());
+  }, [dispatch]);
+
   const array = [
     {
       id: 1,
@@ -50,12 +60,12 @@ function Rewards() {
           })}
         </div>
         <div className="col-4">
-          <div className="sticky-top">
-            <div>
+          <div className="sticky-top border-start border-3 border-secondary">
+            <div className="ms-2">
               <h2>Disclaimer</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore vitae consectetur, cupiditate totam quidem esse nesciunt voluptas qui iure ratione officia?</p>
             </div>
-            <div>
+            <div className="ms-2">
               <h2>FAQ</h2>
               <p>1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, adipisci!</p>
               <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
