@@ -1,10 +1,12 @@
 import "./Contents.css";
-import React from "react";
 import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import VideoPlayerFunction from "../Config/CloudinaryVideoPLayer";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { LikeOutlined } from "@ant-design/icons";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 
 const ColoredLine = ({ color }) => (
   <hr
@@ -16,12 +18,21 @@ const ColoredLine = ({ color }) => (
   />
 );
 
-const videoOptions = {
-  cloudName: "jovitoaddo",
-  publicId: "cptvg3z5b5mcjs1gquap",
-};
-
 function Contents() {
+// const [allVids, setAllVids] = useState([])
+
+// useEffect(async() => {
+//   const result = axios.get("localahost:5000/video");
+//   setAllVids(result.data);
+
+// }, [])
+
+
+
+  const videoOptions = {
+    publicId: `cptvg3z5b5mcjs1gquap`
+  };
+
   return (
     <div>
       <Container fluid style={{}}>
@@ -31,11 +42,15 @@ function Contents() {
             <Row>
               <Row className="p-5">
                 <Col>
-                  <VideoPlayerFunction options={videoOptions} />
+                    <VideoPlayerFunction options={videoOptions} />
                 </Col>
                 <Col>
-                  <Button id="button-exp" className="rounded-circle" style={{ position: "absolute" }}>
-                  <LikeOutlined />
+                  <Button
+                    id="button-exp"
+                    className="rounded-circle"
+                    style={{ position: "absolute" }}
+                  >
+                    <LikeOutlined />
                   </Button>
                 </Col>
               </Row>
@@ -51,14 +66,15 @@ function Contents() {
               height: "600px",
               borderStyle: "solid",
               borderColor: "#41548a",
-              borderWidth: "5px",
+              borderWidth: "0px",
               // boxShadow: "10px 10px 10px 10px #888888",
               backgroundColor: "white",
             }}
             className="rounded d-flex justify-content-center sticky-top overflow-auto"
           >
             <Row style={{ height: "20px" }}>
-              <Col id="divSide"
+              <Col
+                id="divSide"
                 className="d-flex justify-content-center p-5"
                 style={{ backgroundColor: "#41548a" }}
               >
@@ -92,7 +108,7 @@ function Contents() {
               <ColoredLine color="grey" />
               <h1
                 className="d-flex justify-content-center"
-                style={{ fontSize: "55px" }}
+                style={{ fontSize: "50px" }}
               >
                 CATEGORY
               </h1>

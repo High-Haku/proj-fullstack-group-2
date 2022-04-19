@@ -8,7 +8,7 @@ import Rewards from './components/Rewards'
 function App() {
   return (
     <div>
-      <Rewards />
+      <Contents />
     </div>
   );
 }
