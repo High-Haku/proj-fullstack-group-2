@@ -64,13 +64,16 @@ function Contents() {
             lg={3}
             style={{
               height: "600px",
-              boxShadow: "10px 10px 10px 10px #888888",
+              borderStyle: "solid",
+              borderColor: "#41548a",
+              borderWidth: "5px",
+              // boxShadow: "10px 10px 10px 10px #888888",
               backgroundColor: "white",
             }}
             className="rounded d-flex justify-content-center sticky-top overflow-auto"
           >
             <Row style={{ height: "20px" }}>
-              <Col
+              <Col id="divSide"
                 className="d-flex justify-content-center p-5"
                 style={{ backgroundColor: "#41548a" }}
               >

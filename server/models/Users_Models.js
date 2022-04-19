@@ -15,8 +15,12 @@ const UserSchema = new mongoose.Schema({
     },
     role:{
         type: String,
-        enum: ["admin", "user", "pitcher"],
+        enum: ["admin", "user"],
         required: true
+    },
+    content:{
+        type: mongoose.Types.ObjectId,
+        ref: "contents"
     }
 })
 

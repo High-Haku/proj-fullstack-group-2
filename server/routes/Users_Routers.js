@@ -6,7 +6,7 @@ const{getAllUsers,getUsersById,updateUser,deleteUser} = require("../controllers/
 
 
 router.get("/:id",getUsersById)
-router.patch("/:id",updateUser)
+router.put("/:id",updateUser)
 
 router.use(adminRequired)
 router.get("/", getAllUsers)
