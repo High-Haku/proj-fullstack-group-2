@@ -14,8 +14,6 @@ import ContentDetail from './components/ContentDetail';
 
 function App() {
   const [isLogin, setIsLogin ] = useState(false)
-  
-  console.log(Cookies.get('token'))
 
   useEffect(() => {
     const cookie =  Cookies.get('token')

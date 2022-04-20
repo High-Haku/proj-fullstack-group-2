@@ -14,11 +14,10 @@ function ContentDetail() {
   const { id } = useParams();
   const content = useSelector((state) => state.contents);
   const dispatch = useDispatch();
-  console.log(content);
 
   useEffect(() => {
     dispatch(getSingleContent(id));
-  });
+  }, [dispatch]);
 
   if (content.data) {
     return (
@@ -30,7 +29,7 @@ function ContentDetail() {
               <iframe
                 className="vid-content"
                 src={content.data && content.data.video}
-                title="YouTube video player"
+                title={content.data.title}
                 frameborder="0"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen

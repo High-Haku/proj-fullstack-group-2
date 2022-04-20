@@ -9,10 +9,14 @@ function Rewards() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const content = useSelector((state) => state.contents);
-
+  
   useEffect(() => {
     dispatch(getSingleContent(id));
-  });
+  }, [dispatch]);
+
+  const handlePayment = (id) => {
+    console.log(id);
+  }
 
   if (content.data) {
     return (
@@ -35,7 +39,7 @@ function Rewards() {
                       <div className="d-grid my-3">
                         <Button
                           className="btn-select-reward"
-                          variant="outline-warning"
+                          variant="outline-warning" onClick={() => handlePayment(item._id)}
                         >
                           Select
                         </Button>
