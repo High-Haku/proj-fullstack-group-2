@@ -47,7 +47,7 @@ function Rewards() {
             })}
           </div>
           <div className="col-4">
-            <div className="sticky-top border-start border-3 border-secondary">
+          <div id="disclaimer-container" className="sticky-top">
               <div className="ms-2">
                 <h2>Disclaimer</h2>
                 <p>
