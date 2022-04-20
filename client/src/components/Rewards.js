@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Rewards.css";
 import { getSingleContent } from "../redux/actions/contentsActions";
 import { useParams } from "react-router-dom";
+import { Button } from "react-bootstrap"
 
 function Rewards() {
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
   const content = useSelector((state) => state.contents);
 
@@ -47,7 +47,7 @@ function Rewards() {
             })}
           </div>
           <div className="col-4">
-            <div className="sticky-top border-start border-3 border-secondary">
+          <div id="disclaimer-container" className="sticky-top">
               <div className="ms-2">
                 <h2>Disclaimer</h2>
                 <p>
