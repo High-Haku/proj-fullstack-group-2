@@ -8,6 +8,7 @@ import Rewards from './components/Rewards';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
+import FormUpload from './components/FormUpload';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/support" element={<Rewards />} />
         </Route>
         <Route path="*" element={<NotFound />} />
+        <Route path="/form" element={<FormUpload />} />
       </Routes>
     </div>
   );
