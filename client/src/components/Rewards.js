@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Rewards.css";
 import { getSingleContent } from "../redux/actions/contentsActions";
 import { useParams } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 function Rewards() {
   const { id } = useParams();
-  console.log(id);
   const dispatch = useDispatch();
   const content = useSelector((state) => state.contents);
 
