@@ -31,18 +31,17 @@ const Register = () => {
   }
 
   return (
-    <div>
-      <div className="section">
+    <div className="section">
         <div className="container">
           <div className="row full-height justify-content-center">
             <div className="col-12 text-center align-self-center py-5">
-              <div className="section pb-5 pt-5 pt-sm-2 text-center">
+              <div className="section pb-2 pt-5 pt-sm-2 text-center">
                 <div className="card-3d-wrap mx-auto">
                   <div className="card-3d-wrapper">
                     <div className="card-front">
                       <div className="center-wrap">
                         <div className="section text-center">
-                          <h3 id="title" className="mb-4 pb-3"><CloudUploadOutlined /> Sign up</h3>
+                          <h3 id="title" className="mb-4 pb-3" style={{ color: "#F0F0F0" }}>Sign up</h3>
                           <div className="form-group">
                             <input
                               type="text"
@@ -80,7 +79,7 @@ const Register = () => {
                             />
                           </div>
                           <br />
-                          <Button id="btn-regis" onClick={handleSubmit}>Submit</Button>
+                          <Button id="btn-regis" variant="outline-warning" onClick={handleSubmit}>Submit</Button>
                         </div>
                       </div>
                     </div>
@@ -91,7 +90,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

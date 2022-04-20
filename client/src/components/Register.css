@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+#btn-regis {
+  background-color: #3E497A;
+  color: #F0F0F0;
+}
+
+#btn-regis:hover {
+  background-color: #dd5800;
+  color: #F0F0F0;
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 h4 {
   font-weight: 600;
@@ -195,4 +205,4 @@ h4 {
 #btn-regis:hover {
   background-color: #102770;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}
+} */
