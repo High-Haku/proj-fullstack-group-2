@@ -1,11 +1,10 @@
 import "./Contents.css";
 import React, { useEffect } from "react";
 import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
-
-import VideoPlayerFunction from "../Config/CloudinaryVideoPLayer";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { getAllContents } from "../redux/actions/contentsActions";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ColoredLine = ({ color }) => (
   <hr
@@ -17,15 +16,9 @@ const ColoredLine = ({ color }) => (
   />
 );
 
-const videoOptions = {
-  cloudName: "jovitoaddo",
-  publicId: "cptvg3z5b5mcjs1gquap",
-};
-
 function Contents() {
   const dispatch = useDispatch();
   const contents = useSelector((state) => state.contents);
-  console.log(contents.data);
 
   useEffect(() => {
     dispatch(getAllContents());
@@ -36,17 +29,24 @@ function Contents() {
       <Container fluid style={{}}>
         <Row className="pt-5 d-flex text-center">
           <Col />
-          {contents.data === undefined ? null : <Col id="divBorder" lg={7} style={{}} className="">
+          {contents.data === undefined ? null 
+          : <Col id="divBorder" lg={7} style={{}} className="">
             {contents.data.map(content => {
               return (
                 <Row key={content._id}>
-                  <Row className="p-5">
+                  <Row >
                     <Col>
-                      <video src={content.video} autoPlay controls muted />
+                      <video src={content.video} controls muted />
                     </Col>
                     <Col>
                       <Button style={{ position: "relative", top: "700px" }}>
                         Like
+                      </Button>
+                      <Button style={{ position: "relative", top: "700px" }}>
+                        <Link to={`/contents/${content._id}`}> Detail </Link>
+                      </Button>
+                      <Button style={{ position: "relative", top: "700px" }}>
+                        Share
                       </Button>
                     </Col>
                   </Row>
@@ -55,23 +55,23 @@ function Contents() {
               )
             })}
             <Col />
-          </Col> }
+          </Col>}
           <Col />
-
           <Col
             lg={3}
             style={{
               height: "600px",
               borderStyle: "solid",
               borderColor: "#41548a",
-              borderWidth: "5px",
+              borderWidth: "0px",
               // boxShadow: "10px 10px 10px 10px #888888",
               backgroundColor: "white",
             }}
-            className="rounded d-flex justify-content-center sticky-top overflow-auto"
+            className="rounded d-flex justify-content-center sticky-top pt-5 overflow-auto"
           >
             <Row style={{ height: "20px" }}>
-              <Col id="divSide"
+              <Col
+                id="divSide"
                 className="d-flex justify-content-center p-5"
                 style={{ backgroundColor: "#41548a" }}
               >
@@ -105,7 +105,7 @@ function Contents() {
               <ColoredLine color="grey" />
               <h1
                 className="d-flex justify-content-center"
-                style={{ fontSize: "55px" }}
+                style={{ fontSize: "50px" }}
               >
                 CATEGORY
               </h1>
