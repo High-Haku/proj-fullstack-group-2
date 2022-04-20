@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import Register from "./components/Register"
 import 'antd/dist/antd.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -19,8 +19,6 @@ import ContentDetail from './components/ContentDetail';
 
 function App() {
   const [isLogin, setIsLogin ] = useState(false)
-  
-  console.log(Cookies.get('token'))
 
   useEffect(() => {
     const cookie =  Cookies.get('token')

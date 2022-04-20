@@ -17,7 +17,7 @@ function ContentDetail() {
 
   useEffect(() => {
     dispatch(getSingleContent(id));
-  });
+  }, [dispatch]);
 
   if (content.data) {
     return (
@@ -54,21 +54,22 @@ function ContentDetail() {
               </div>
               <hr />
               <Row>
-                {content.data.reward.map((item) => {
-                  return (
-                    <div className="col-4 mb-4" key={item.id}>
-                      <div id="card-container2" className="card card1 h-100">
-                        <div className="card-body">
-                          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
-                            {item.name}
-                          </p>
-                          <span className="h3">{item.price}</span>IDR
-                          <br />
+                {content.data.reward === undefined ? null :
+                  content.data.reward.map((item) => {
+                    return (
+                      <div className="col-4 mb-4" key={item.id}>
+                        <div id="card-container2" className="card card1 h-100">
+                          <div className="card-body">
+                            <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+                              {item.name}
+                            </p>
+                            <span className="h3">{item.price}</span>IDR
+                            <br />
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </Row>
             </Col>
           </Row>
