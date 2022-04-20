@@ -1,11 +1,10 @@
 import "./Contents.css";
 import React, { useEffect } from "react";
 import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
-
-import VideoPlayerFunction from "../Config/CloudinaryVideoPLayer";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { getAllContents } from "../redux/actions/contentsActions";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ColoredLine = ({ color }) => (
   <hr
@@ -17,15 +16,10 @@ const ColoredLine = ({ color }) => (
   />
 );
 
-const videoOptions = {
-  cloudName: "jovitoaddo",
-  publicId: "cptvg3z5b5mcjs1gquap",
-};
-
 function Contents() {
   const dispatch = useDispatch();
   const contents = useSelector((state) => state.contents);
-  console.log(contents.data);
+  // console.log(contents.data);
 
   useEffect(() => {
     dispatch(getAllContents());
@@ -36,7 +30,8 @@ function Contents() {
       <Container fluid style={{}}>
         <Row className="pt-5 d-flex text-center">
           <Col />
-          {contents.data === undefined ? null : <Col id="divBorder" lg={7} style={{}} className="">
+          {contents.data === undefined ? null 
+          : <Col id="divBorder" lg={7} style={{}} className="">
             {contents.data.map(content => {
               return (
                 <Row key={content._id}>
@@ -49,7 +44,7 @@ function Contents() {
                         Like
                       </Button>
                       <Button style={{ position: "relative", top: "700px" }}>
-                        Detail
+                        <Link to={`/contents/${content._id}`}> Detail </Link>
                       </Button>
                       <Button style={{ position: "relative", top: "700px" }}>
                         Share

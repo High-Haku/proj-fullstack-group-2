@@ -7,6 +7,7 @@ import Contents from './components/Contents';
 import Rewards from './components/Rewards';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
+import ContentDetail from "./components/ContentDetail";
 
 function App() {
   return (
@@ -16,9 +17,11 @@ function App() {
           <Route index element={<Contents />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/support" element={<Rewards />} />
+          <Route path="/support/:id" element={<Rewards />} />
+          <Route path="/contents/:id" element={<ContentDetail />} />
         </Route>
       </Routes>
+      {/* <ContentDetail /> */}
     </div>
   );
 }
