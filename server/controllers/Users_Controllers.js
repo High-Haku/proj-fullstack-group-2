@@ -6,8 +6,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = {
   getAllUsers: async (req, res) => {
-    const users = await UserModel.find({}, "-__v")
-    .populate("content", "-__v")
+    const users = await UserModel.find({}, "-__v").populate("content", "-__v");
 
     try {
       res.json({
@@ -20,8 +19,10 @@ module.exports = {
   },
 
   getUsersById: async (req, res) => {
-    const users = await UserModel.findById(req.params.id, "-__v")
-    .populate("content", "-__v")
+    const users = await UserModel.findById(req.params.id, "-__v").populate(
+      "content",
+      "-__v"
+    );
 
     try {
       res.json({
@@ -53,10 +54,10 @@ module.exports = {
           message: "New User Added",
           data: data,
         });
-      }else{
+      } else {
         res.json({
-          message: "Email already exist, try another"
-        })
+          message: "Email already exist, try another",
+        });
       }
     } catch (err) {
       console.log(err), res.status(500).send(err);
@@ -85,8 +86,9 @@ module.exports = {
           id: user.id,
           role: user.role,
         });
+      } else {
+        res.json({ message: "email / password invalid" });
       }
-      res.status(400).json({ msg: "email / password invalid" });
     } catch (err) {
       res.status(404).json({ msg: "email not found", err });
     }
