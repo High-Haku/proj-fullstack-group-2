@@ -19,9 +19,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/support" element={<Rewards />} />
+          <Route path="/form" element={<FormUpload />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
-        <Route path="/form" element={<FormUpload />} />
       </Routes>
     </div>
   );
