@@ -14,7 +14,6 @@ function ContentDetail() {
   const { id } = useParams();
   const content = useSelector((state) => state.contents);
   const dispatch = useDispatch();
-  console.log(content);
 
   useEffect(() => {
     dispatch(getSingleContent(id));
@@ -25,20 +24,16 @@ function ContentDetail() {
       <div>
         <Container className="content-container">
           <Row className="row-col-md-1">
-            <Col id="left-col" className="col-md col-xs justify-content-center">
-              <Col className="col-md-8 pt-1 pb-5">
-              <iframe
-                className="vid-content"
-                src={content.data && content.data.video}
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+            <Col
+              id="left-col"
+              className="col-md col-xs justify-content-center sticky-top"
+            >
+              <Col id="vid-container" className="col-md-8 pt-1 pb-5 ">
+                <video src={content.data.video} controls muted />
               </Col>
             </Col>
             <Col id="right-col" className="col-md col-xs order-third mt-4">
-              <h1>{content.data.title}</h1>
+              <h1 style={{ color: "272727" }}>{content.data.title}</h1>
               <hr />
               <p>{content.data.description}</p>
               <div id="btn-group" className="order-second">
@@ -49,22 +44,31 @@ function ContentDetail() {
                   <InteractionFilled className="p-2" />
                 </Button>
                 <Button variant="outline-warning" className="btn-contentd mx-2">
-                  <Link style={{color:"white"}} to={`/support/${content.data._id}`}>
+                  <Link
+                    style={{ color: "white" }}
+                    to={`/support/${content.data._id}`}
+                  >
                     <DollarCircleFilled className="p-2" />
                   </Link>
                 </Button>
               </div>
               <hr />
               <Row>
-                <Col className="support-info">
-                  <h3>Support 1</h3>
-                </Col>
-                <Col className="support-info">
-                  <h3>Support 1</h3>
-                </Col>
-                <Col className="support-info">
-                  <h3>Support 1</h3>
-                </Col>
+                {content.data.reward.map((item) => {
+                  return (
+                    <div className="col-4 mb-4" key={item.id}>
+                      <div id="card-container2" className="card card1 h-100">
+                        <div className="card-body">
+                          <p style={{ fontSize: "20px", fontWeight: "bold" }}>
+                            {item.name}
+                          </p>
+                          <span className="h3">{item.price}</span>IDR
+                          <br />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </Row>
             </Col>
           </Row>
