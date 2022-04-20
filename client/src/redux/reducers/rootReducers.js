@@ -1,6 +1,5 @@
 import { combineReducers } from "redux";
 import contents from './contentsReducer';
-import accountSys from './RegLogReducer'
 
-const rootReducers = combineReducers({ contents, accountSys });
+const rootReducers = combineReducers({ contents });
 export default rootReducers;

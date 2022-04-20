@@ -11,7 +11,7 @@ const ColoredLine = ({ color }) => (
     style={{
       color,
       backgroundColor: color,
-      height: 5,
+      height: 3,
     }}
   />
 );

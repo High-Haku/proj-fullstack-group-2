@@ -43,7 +43,7 @@ module.exports = {
 
       if (!result) {
         if (!validator.isEmail(req.body.email))
-          return res.status(400).json({ messege: "Invalid Email" });
+          return res.json({ message: "Invalid Email" });
 
         data.password = await bcrypt
           .hash(data.password, saltRounds)
@@ -90,7 +90,7 @@ module.exports = {
         res.json({ message: "email / password invalid" });
       }
     } catch (err) {
-      res.status(404).json({ msg: "email not found", err });
+      res.json({ msg: "email not found", err });
     }
   },
 
