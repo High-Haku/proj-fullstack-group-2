@@ -8,7 +8,7 @@ const{getAllUsers,getUsersById,updateUser,deleteUser} = require("../controllers/
 router.get("/:id",getUsersById)
 router.put("/:id",updateUser)
 
-router.use(adminRequired)
+
 router.get("/", getAllUsers)
 router.delete("/:id",deleteUser)
 
