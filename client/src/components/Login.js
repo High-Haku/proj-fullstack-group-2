@@ -5,6 +5,7 @@ import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Swal from "sweetalert2";
 
 const Login = ({}) => {
   const navigate = useNavigate();
@@ -22,11 +23,35 @@ const Login = ({}) => {
   };
 
   const handleSubmit = () => {
-    axios.post("http://localhost:5000/login", user).then((res) => {
-      alert(res.data.message);
+    axios.post("http://localhost:5000/login", user)
+    .then((res) => {
+      const message = res.data.message
+
+      if(message==="Login Successful"){
+        Swal.fire({
+          icon: 'success',
+          title: (message),
+          color: '3E497A',
+          backdrop: 'rgb(62, 73, 122)',
+        })
       Cookies.set("token", res.data.token, { expires: 7, path: "/" });
 
       navigate("/");
+      }else if(message==="email / password invalid"){
+        Swal.fire({
+          icon: 'error',
+          title: (message),
+          color: '3E497A',
+          backdrop: 'rgb(62, 73, 122)',
+        })
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: (message),
+          color: '3E497A',
+          backdrop: 'rgb(62, 73, 122)',
+        })
+      }
     });
   };
 
