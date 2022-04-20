@@ -25,7 +25,7 @@ const videoOptions = {
 function Contents() {
   const dispatch = useDispatch();
   const contents = useSelector((state) => state.contents);
-  console.log(contents.data);
+  console.log(contents);
 
   useEffect(() => {
     dispatch(getAllContents());
@@ -42,7 +42,7 @@ function Contents() {
                 <Row key={content._id}>
                   <Row className="p-5">
                     <Col>
-                      <video src={content.video} autoPlay controls muted />
+                      <video src={content.video}  controls muted />
                     </Col>
                     <Col>
                       <Button style={{ position: "relative", top: "700px" }}>
@@ -63,21 +63,21 @@ function Contents() {
             <Col />
           </Col> }
           <Col />
-
           <Col
             lg={3}
             style={{
               height: "600px",
               borderStyle: "solid",
               borderColor: "#41548a",
-              borderWidth: "5px",
+              borderWidth: "0px",
               // boxShadow: "10px 10px 10px 10px #888888",
               backgroundColor: "white",
             }}
             className="rounded d-flex justify-content-center sticky-top overflow-auto"
           >
             <Row style={{ height: "20px" }}>
-              <Col id="divSide"
+              <Col
+                id="divSide"
                 className="d-flex justify-content-center p-5"
                 style={{ backgroundColor: "#41548a" }}
               >
@@ -111,7 +111,7 @@ function Contents() {
               <ColoredLine color="grey" />
               <h1
                 className="d-flex justify-content-center"
-                style={{ fontSize: "55px" }}
+                style={{ fontSize: "50px" }}
               >
                 CATEGORY
               </h1>
