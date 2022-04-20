@@ -9,8 +9,7 @@ function Rewards() {
   console.log(id);
   const dispatch = useDispatch();
   const content = useSelector((state) => state.contents)
-  // console.log(content.data.reward);
-
+  
   useEffect(() => {
     dispatch(getSingleContent(id));
   });
