@@ -1,30 +1,34 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
 import "./Register.css";
 import { CloudUploadOutlined } from "@ant-design/icons/lib/icons";
+import { postRegister } from "../redux/actions/RegLogAction";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  // const dispatch = useDispatch();
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
 
-  // const [user, setUser] = useState({
-  //   username : "",
-  //   email: "",
-  //   password: "",
-  // });
+  const [user, setUser] = useState({
+    name : "",
+    email: "",
+    password: "",
+  });
 
-  // const handleChange = (e) => {
-  //   setUser(()=>({
-  //     ...user,
-  //     [e.target.name]: e.target.value
-  //   }))
-  // }
+  const handleChange = (e) => {
+    e.preventDefault();
+    setUser(()=>({
+      ...user,
+      [e.target.name]: e.target.value
+    }))
+  }
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   dispatch(userRegister({username: username, email: email, password: password}))
-  // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(postRegister(user))
+    navigate("/login")
+  }
 
   return (
     <div>
@@ -42,13 +46,13 @@ const Register = () => {
                           <div className="form-group">
                             <input
                               type="text"
-                              name="username"
+                              name="name"
                               className="form-style"
                               placeholder="Your Full Name"
                               id="username"
                               autoComplete="off"
-                              // value={user.username}
-                              // onChange={handleChange}
+                              value={user.name}
+                              onChange={handleChange}
                             />
                           </div>
                           <div className="form-group mt-2">
@@ -59,8 +63,8 @@ const Register = () => {
                               placeholder="Your Email"
                               id="email"
                               autoComplete="off"
-                              // value={user.email}
-                              // onChange={handleChange}
+                              value={user.email}
+                              onChange={handleChange}
                             />
                           </div>
                           <div className="form-group mt-2">
@@ -71,12 +75,12 @@ const Register = () => {
                               placeholder="Your Password"
                               id="password"
                               autoComplete="off"
-                              // value={user.email}
-                              // onChange={handleChange}
+                              value={user.password}
+                              onChange={handleChange}
                             />
                           </div>
                           <br />
-                          <Button id="btn-regis">Submit</Button>
+                          <Button id="btn-regis" onClick={handleSubmit}>Submit</Button>
                         </div>
                       </div>
                     </div>

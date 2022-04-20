@@ -42,7 +42,7 @@ function Contents() {
                 <Row key={content._id}>
                   <Row className="p-5">
                     <Col>
-                      <video src={content.video} autoPlay controls muted />
+                      <video src={content.video}  controls muted />
                     </Col>
                     <Col>
                       <Button style={{ position: "relative", top: "700px" }}>
