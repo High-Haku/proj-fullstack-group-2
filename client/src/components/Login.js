@@ -6,45 +6,48 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-
 const Login = ({}) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [user, setUser] = useState({
-    email:"",
-    password:""
-  })
+    email: "",
+    password: "",
+  });
 
-
-  const handleChange = e =>{
-    const{name, value} = e.target
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setUser({
       ...user,
-      [name]:value
-    })
-  }
+      [name]: value,
+    });
+  };
 
-  const handleSubmit = () =>{
-    axios.post("http://localhost:5000/login",user)
-    .then(res => {alert(res.data.message)
-    Cookies.set('token',res.data.token,{expires: 7, path:'/'})
-   
-    navigate("/")
-  })
-  }
+  const handleSubmit = () => {
+    axios.post("http://localhost:5000/login", user).then((res) => {
+      alert(res.data.message);
+      Cookies.set("token", res.data.token, { expires: 7, path: "/" });
+
+      navigate("/");
+    });
+  };
 
   return (
     <div>
       <div className="section">
         <div className="container">
           <div className="row full-height justify-content-center">
-            <div className="col-12 text-center align-self-center py-5">
-              <div className="section pb-5 pt-5 pt-sm-2 text-center">
+            <div className="col-12 text-center align-self-center py-2">
+              <div className="section pb-2 pt-2 pt-sm-2 text-center">
                 <div className="card-3d-wrap mx-auto">
                   <div className="card-3d-wrapper">
                     <div className="card-front">
                       <div className="center-wrap">
                         <div className="section text-center">
-                          <h4 className="mb-4 pb-3">Login</h4>
+                          <h4
+                            className="mb-4 pb-3"
+                            style={{ color: "#F0F0F0" }}
+                          >
+                            Login
+                          </h4>
                           <div className="form-group">
                             <input
                               type="email"
@@ -68,14 +71,25 @@ const Login = ({}) => {
                               value={user.password}
                               onChange={handleChange}
                             />
+                            <br />
+                            <br />
                           </div>
-                          <Button onClick={handleSubmit}>Submit</Button>
-                          <p className="mb-0 mt-4 text-center">
-                            <a href="#0" class="link">
-                              Forgot your password?
+                          <Button
+                            variant="outline-warning"
+                            className="btn-loginp"
+                            onClick={handleSubmit}
+                          >
+                            Submit
+                          </Button>
+                          <p
+                            className="mb-0 mt-4 text-center"
+                            style={{ color: "#F0F0F0" }}
+                          >
+                            Don't have an account yet?
+                            <br />
+                            <a href="#0" style={{ color: "#F0F0F0" }}>
+                              Register here!
                             </a>
-                            or
-                            <a href="#0"> Register</a>
                           </p>
                         </div>
                       </div>
