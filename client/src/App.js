@@ -8,8 +8,9 @@ import Rewards from './components/Rewards';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import { useEffect, useState } from 'react';
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 import Post from './components/Post';
+import ContentDetail from './components/ContentDetail';
 
 function App() {
   const [isLogin, setIsLogin ] = useState(false)
@@ -31,7 +32,8 @@ function App() {
           <Route index element={<Contents />} />
           <Route path="/login" element ={<Login/>}/>
           <Route path="/register" element={<Register />} />
-          <Route path="/support" element={isLogin !== null ? <Rewards /> : <Navigate to={"/login"} />} />
+          <Route path="/support/:id" element={<Rewards />} />
+          <Route path="/contents/:id" element={<ContentDetail />} />
         </Route>
         <Route path='/create-a-post' element={<Post/>}/>
       </Routes>

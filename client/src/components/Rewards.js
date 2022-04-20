@@ -1,82 +1,69 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './Rewards.css'
-import { getAllContents } from '../redux/actions/contentsActions'
+import './Rewards.css';
+import { getSingleContent } from '../redux/actions/contentsActions';
+import { useParams } from 'react-router-dom';
 
 function Rewards() {
+  const { id } = useParams();
+  console.log(id);
   const dispatch = useDispatch();
-  const contents = useSelector((state) => state.contents)
-  console.log(contents);
-
+  const content = useSelector((state) => state.contents)
+  
   useEffect(() => {
-    dispatch(getAllContents());
-  }, [dispatch]);
+    dispatch(getSingleContent(id));
+  });
 
-  const array = [
-    {
-      id: 1,
-      name: "Support 1",
-      description: "Basic support",
-      reward: "Get a sample product",
-      price: "100000"
-    },
-    {
-      id: 2,
-      name: "Support 2",
-      description: "Standard support",
-      reward: "Get a sample product",
-      price: "300000"
-    },
-    {
-      id: 3,
-      name: "Support 3",
-      description: "Expert support",
-      reward: "Get a sample product",
-      price: "500000"
-    }
-  ];
-  return (
-    <div className="container p-5">
-      <div className="row">
-        <div className="col-8">
-          {array.map(item => {
-            return (
-              <div className="col-6 mb-4" key={item.id}>
-                <div className="card card1 h-100">
-                  <div className="card-body">
-                    <h5 className="card-title">{item.name}</h5>
-                    <small className='text-muted'>{item.description}</small>
-                    <br />
-                    <span className="h2">{item.price}</span>IDR
-                    <br />
-                    <p>{item.reward}</p>
-                    <div className="d-grid my-3">
-                      <button className="btn btn-outline-dark btn-block">Select</button>
+  if (content.data) {
+    return (
+      <div className="container p-5">
+        <div className="row">
+          <div className="col-8">
+            {content.data.reward.map(item => {
+              return (
+                <div className="col-6 mb-4" key={item.id}>
+                  <div className="card card1 h-100">
+                    <div className="card-body">
+                      <h5 className="card-title">{item.name}</h5>
+                      <small className='text-muted'>{item.description}</small>
+                      <br />
+                      <span className="h2">{item.price}</span>IDR
+                      <br />
+                      <p>{item.reward}</p>
+                      <div className="d-grid my-3">
+                        <button className="btn btn-outline-dark btn-block">Select</button>
+                      </div>
                     </div>
                   </div>
                 </div>
+              )
+            })}
+          </div>
+          <div className="col-4">
+            <div className="sticky-top border-start border-3 border-secondary">
+              <div className="ms-2">
+                <h2>Disclaimer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore vitae consectetur, cupiditate totam quidem esse nesciunt voluptas qui iure ratione officia?</p>
               </div>
-            )
-          })}
-        </div>
-        <div className="col-4">
-          <div className="sticky-top border-start border-3 border-secondary">
-            <div className="ms-2">
-              <h2>Disclaimer</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore vitae consectetur, cupiditate totam quidem esse nesciunt voluptas qui iure ratione officia?</p>
-            </div>
-            <div className="ms-2">
-              <h2>FAQ</h2>
-              <p>1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, adipisci!</p>
-              <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <p>3. Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-              <p>4. Lorem ipsum dolor sit amet.</p>
+              <div className="ms-2">
+                <h2>FAQ</h2>
+                <p>1. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, adipisci!</p>
+                <p>2. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>3. Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                <p>4. Lorem ipsum dolor sit amet.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  )
+    )
+  } else {
+    return (
+      <>
+        <h1>Loading</h1>
+      </>
+    )
+  }
 }
 
 export default Rewards;
