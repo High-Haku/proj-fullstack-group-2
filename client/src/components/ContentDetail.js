@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
-import { Col, Container, Row, Button, Form } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import "./ContentDetail.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getSingleContent } from '../redux/actions/contentsActions';
+import { getSingleContent } from "../redux/actions/contentsActions";
+import {
+  DollarCircleFilled,
+  InteractionFilled,
+  LikeFilled,
+} from "@ant-design/icons";
 
 function ContentDetail() {
   const { id } = useParams();
-  const content = useSelector(state => state.contents);
+  const content = useSelector((state) => state.contents);
   const dispatch = useDispatch();
   console.log(content);
 
@@ -18,56 +23,57 @@ function ContentDetail() {
   if (content.data) {
     return (
       <div>
-        <Container className="bootdey mt-5">
-          <Row className="row-cols-8">
-            <Col id="left-col" className="col-md-5">
-              <video src={content.data && content.data.video} controls muted />
+        <Container className="content-container">
+          <Row className="row-col-md-1">
+            <Col id="left-col" className="col-md col-xs justify-content-center">
+              <Col className="col-md-7 pt-5 pb-5">
+                <video
+                  src={content.data && content.data.video}
+                  controls
+                  muted
+                />
+              </Col>
             </Col>
-            <Col id="mid-col">
-              <div id="btn-group" className="col-md-1 order-second">
-                <Button className="mb-2">Like</Button>
-                <Button className="mb-2">Share</Button>
-                <Button className="mb-2">
-                  <Link to={`/support/${content.data._id}`}> Pitch </Link></Button>
-              </div>
-            </Col>
-            <Col id="right-col" className="col-md-6 order-third">
+            <Col id="right-col" className="col-md col-xs order-third mt-4">
               <h1>{content.data.title}</h1>
-              <br />
+              <hr />
               <p>{content.data.description}</p>
-              <Form className="mt-5">
-                <Form.Group
-                  className="mb-3"
-                  controlId="exampleForm.ControlTextarea1"
-                >
-                  <Form.Label>Comment</Form.Label>
-                  <Form.Control
-                    id="comment-box"
-                    as="textarea"
-                    rows={3}
-                    placeholder="Input your comment"
-                  />
-                </Form.Group>
-              </Form>
-              <Button className="btn-send">Send</Button>
-              <br />
-              <br />
-              <br />
-              <h4>Comments Section :</h4>
-              <br />
-              <br />
-              <br />
+              <div id="btn-group" className="order-second">
+                <Button variant="outline-warning" className="btn-contentd mx-2">
+                  <LikeFilled className="p-2" />
+                </Button>
+                <Button variant="outline-warning" className="btn-contentd mx-2">
+                  <InteractionFilled className="p-2" />
+                </Button>
+                <Button variant="outline-warning" className="btn-contentd mx-2">
+                  <Link to={`/support/${content.data._id}`}>
+                    <DollarCircleFilled className="p-2" />
+                  </Link>
+                </Button>
+              </div>
+              <hr />
+              <Row>
+                <Col className="support-info">
+                  <h3>Support 1</h3>
+                </Col>
+                <Col className="support-info">
+                  <h3>Support 1</h3>
+                </Col>
+                <Col className="support-info">
+                  <h3>Support 1</h3>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Container>
       </div>
-    )
+    );
   } else {
     return (
       <>
         <h1>Loading</h1>
       </>
-    )
+    );
   }
 }
 
