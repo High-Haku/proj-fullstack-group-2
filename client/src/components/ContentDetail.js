@@ -23,15 +23,18 @@ function ContentDetail() {
   if (content.data) {
     return (
       <div>
-        <Container className="content-container">
+        <Container className="content-container border-end">
           <Row className="row-col-md-1">
             <Col id="left-col" className="col-md col-xs justify-content-center">
-              <Col className="col-md-7 pt-5 pb-5">
-                <video
-                  src={content.data && content.data.video}
-                  controls
-                  muted
-                />
+              <Col className="col-md-8 pt-1 pb-5">
+              <video
+                className="vid-content"
+                src={content.data && content.data.video}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></video>
               </Col>
             </Col>
             <Col id="right-col" className="col-md col-xs order-third mt-4">
@@ -46,7 +49,7 @@ function ContentDetail() {
                   <InteractionFilled className="p-2" />
                 </Button>
                 <Button variant="outline-warning" className="btn-contentd mx-2">
-                  <Link to={`/support/${content.data._id}`}>
+                  <Link style={{color:"white"}} to={`/support/${content.data._id}`}>
                     <DollarCircleFilled className="p-2" />
                   </Link>
                 </Button>

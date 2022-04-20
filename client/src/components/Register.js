@@ -5,10 +5,12 @@ import "./Register.css";
 import { CloudUploadOutlined } from "@ant-design/icons/lib/icons";
 import { postRegister } from "../redux/actions/RegLogAction";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const navigate = useNavigate()
-  const dispatch = useDispatch();
+  
 
   const [user, setUser] = useState({
     name : "",
@@ -25,9 +27,37 @@ const Register = () => {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(postRegister(user))
-    navigate("/login")
+    axios.post("http://localhost:5000/register", user)
+    .then((res)=>{
+      const message = res.data.message
+      
+      if(message==="New User Added"){
+        Swal.fire({
+          icon: 'success',
+          title: (message),
+          text: 'Something went wrong!',
+          color: '#F1D00A',
+          backdrop: 'rgb(62, 73, 122)',
+        })
+        navigate("/login")
+      }else if(message==="Invalid Email"){
+        Swal.fire({
+          icon: 'error',
+          title: (message),
+          text: 'Something went wrong!',
+          color: '#F1D00A',
+          backdrop: '#21325E',
+        })
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: (message),
+          text: 'Something went wrong!',
+          color: '#F1D00A',
+          backdrop: 'rgb(62, 73, 122)',
+        })
+      }
+    })
   }
 
   return (
