@@ -36,7 +36,7 @@ const Register = () => {
           icon: 'success',
           title: (message),
           text: 'Something went wrong!',
-          color: '#F1D00A',
+          color: '3E497A',
           backdrop: 'rgb(62, 73, 122)',
         })
         navigate("/login")
@@ -45,15 +45,15 @@ const Register = () => {
           icon: 'error',
           title: (message),
           text: 'Something went wrong!',
-          color: '#F1D00A',
-          backdrop: '#21325E',
+          color: '3E497A',
+          backdrop: 'rgb(62, 73, 122)',
         })
       }else{
         Swal.fire({
           icon: 'error',
           title: (message),
           text: 'Something went wrong!',
-          color: '#F1D00A',
+          color: '3E497A',
           backdrop: 'rgb(62, 73, 122)',
         })
       }

@@ -1,9 +1,9 @@
 #left-col {
     display: flex;
     width: auto;
-    height: 600px;
-    position: -webkit-sticky;
-    position: sticky;
+    height: 700px;
+    /* position: -webkit-sticky;
+    position: sticky; */
     top: 0;
 }
 
@@ -17,7 +17,7 @@
     border-radius: 25px;
     border-style: solid;
     border-color: #21325E;
-    border-width: 10px;
+    border-width: 2px;
     height:fit-content;
     box-shadow: 10px 10px 5px
 }
@@ -54,11 +54,15 @@
     object-fit: fill;
 }
 
-.support-detail h3 {
-    text-align: center;
-}
-
-video {
+#vid-container video {
     width: 100%;
     max-height: 100%;
-  }
+}
+
+#card-container2 {
+    background-color: #3E497A;
+    color: #F0F0F0;
+}
+
+
+
