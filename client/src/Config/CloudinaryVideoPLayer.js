@@ -1,7 +1,7 @@
 import React from "react";
 
 function VideoPlayerCloudHosted(props) {
-  const url = `https://player.cloudinary.com/embed/?public_id=${props.options.publicId}&cloud_name=${props.options.cloudName}&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&source%5Bsource_types%5D%5B0%5D=mp4`;
+  const url = `https://player.cloudinary.com/embed/?public_id=${props.options.publicId}&cloud_name=jovitoaddo&player%5Bfluid%5D=true&player%5Bcontrols%5D=true&source%5Bsource_types%5D%5B0%5D=mp4`;
 
   return (
     <>
