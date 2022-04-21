@@ -18,45 +18,47 @@ const ColoredLine = ({ color }) => (
 
 function Contents() {
   const dispatch = useDispatch();
-  const contents = useSelector((state) => state.contents);
+  const { contents } = useSelector((state) => state.contents);
+  console.log(contents);
 
   useEffect(() => {
     dispatch(getAllContents());
   }, [dispatch]);
 
-  if (contents.data) {
+  if (contents.length > 0) {
     return (
       <div>
         <Container fluid style={{}}>
           <Row className="pt-5 d-flex text-center">
             <Col />
-            {contents.data === undefined ? null
-              : <Col id="divBorder" lg={7} style={{}} className="">
-                {contents.data.map(content => {
-                  return (
-                    <Row key={content._id}>
-                      <Row >
-                        <Col>
-                          <video src={content.video} controls muted />
-                        </Col>
-                        <Col>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            Like
-                          </Button>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            <Link to={`/contents/${content._id}`}> Detail </Link>
-                          </Button>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            Share
-                          </Button>
-                        </Col>
-                      </Row>
-                      <ColoredLine color="grey" />
+            {/* {contents.data && */}
+            <Col id="divBorder" lg={7} style={{}} className="">
+              {contents.map(content => {
+                return (
+                  <Row key={content._id}>
+                    <Row >
+                      <Col>
+                        <video src={content.video} controls muted />
+                      </Col>
+                      <Col>
+                        <Button style={{ position: "relative", top: "700px" }}>
+                          Like
+                        </Button>
+                        <Button style={{ position: "relative", top: "700px" }}>
+                          <Link to={`/contents/${content._id}`}> Detail </Link>
+                        </Button>
+                        <Button style={{ position: "relative", top: "700px" }}>
+                          Share
+                        </Button>
+                      </Col>
                     </Row>
-                  )
-                })}
-                <Col />
-              </Col>}
+                    <ColoredLine color="grey" />
+                  </Row>
+                )
+              })}
+              <Col />
+            </Col>
+            {/* } */}
             <Col />
             <Col
               lg={3}
