@@ -1,10 +1,19 @@
 import "./Contents.css";
 import React, { useEffect } from "react";
-import { Container, Col, Row, Button, NavLink } from "react-bootstrap";
+import {
+  Container,
+  Col,
+  Row,
+  Button,
+  NavLink,
+  Card,
+  Navbar,
+} from "react-bootstrap";
 import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { getAllContents } from "../redux/actions/contentsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { ReadFilled, InteractionFilled, LikeFilled } from "@ant-design/icons";
 
 const ColoredLine = ({ color }) => (
   <hr
@@ -28,38 +37,63 @@ function Contents() {
     return (
       <div>
         <Container fluid style={{}}>
-          <Row className="pt-5 d-flex text-center">
-            <Col />
-            {contents.data === undefined ? null
-              : <Col id="divBorder" lg={7} style={{}} className="">
-                {contents.data.map(content => {
+          <Row className="d-flex">
+            {contents.data === undefined ? null : (
+              <Col id="divBorder" lg={8} style={{}} className="">
+                {contents.data.map((content) => {
                   return (
                     <Row key={content._id}>
-                      <Row >
-                        <Col>
-                          <video src={content.video} controls muted />
-                        </Col>
-                        <Col>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            Like
-                          </Button>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            <Link to={`/contents/${content._id}`}> Detail </Link>
-                          </Button>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            Share
-                          </Button>
-                        </Col>
-                      </Row>
-                      <ColoredLine color="grey" />
+                      <Col className="d-flex justify-content-center pt-4">
+                        <Card style={{ width: "25em", borderColor: "white" }}>
+                          <Card.Title className="d-flex align-items-center">
+                            <Navbar.Brand className="d-flex align-items-center" href="/profile">
+                              <img
+                                alt=""
+                                src="https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png"
+                                width="45"
+                                height="45"
+                                className="d-inline-block align-top"
+                                style={{borderRadius: "50%"}}
+                              /><p className="my-0 p-2" style={{color: "#272727"}}>{content.userID.name}</p>
+                            </Navbar.Brand>
+                          </Card.Title>
+                          <Card.Body className="text-center">
+                            <video src={content.video} controls muted />
+                            <Button
+                              variant="outline-warning"
+                              className="btn-contentpage mx-2"
+                            >
+                              <LikeFilled className="p-2" />
+                            </Button>
+                            <Button
+                              variant="outline-warning"
+                              className="btn-contentpage mx-2"
+                            >
+                              <InteractionFilled className="p-2" />
+                            </Button>
+                            <Button
+                              variant="outline-warning"
+                              className="btn-contentpage mx-2"
+                            >
+                              <Link
+                                style={{ color: "white" }}
+                                to={`/contents/${content._id}`}
+                              >
+                                <ReadFilled className="p-2" />
+                              </Link>
+                            </Button>
+                          </Card.Body>
+                        </Card>
+                      </Col>
                     </Row>
-                  )
+                  );
                 })}
                 <Col />
-              </Col>}
-            <Col />
+              </Col>
+            )}
+
             <Col
-              lg={3}
+              lg={4}
               style={{
                 height: "600px",
                 borderStyle: "solid",
@@ -68,65 +102,48 @@ function Contents() {
                 // boxShadow: "10px 10px 10px 10px #888888",
                 backgroundColor: "white",
               }}
-              className="rounded d-flex justify-content-center sticky-top pt-5 overflow-auto"
+              className="rounded d-flex justify-content-center sticky-top overflow-auto"
             >
-              <Row style={{ height: "20px" }}>
-                <Col
-                  id="divSide"
-                  className="d-flex justify-content-center p-5"
-                  style={{ backgroundColor: "#41548a" }}
-                >
+              <Row id="divSide">
+                <Col className="d-flex p-5 justify-content-center">
                   <Button
-                    className="rounded-pill"
-                    style={{
-                      backgroundColor: "white",
-                      color: "gray",
-                      borderColor: "white",
-                    }}
+                    variant="outline-warning"
+                    className="rounded-pill mx-2"
                   >
                     LOGIN
                   </Button>
-                  <Col />
-
                   <Button
-                    className="rounded-pill"
-                    style={{
-                      backgroundColor: "white",
-                      color: "gray",
-                      borderColor: "white",
-                    }}
+                    variant="outline-warning"
+                    className="rounded-pill mx-2"
                   >
                     REGISTER
                   </Button>
-
-                  <Col />
-                  <CloudinaryUploadWidget />
+                  <Button
+                    variant="outline-warning"
+                    className="rounded-pill mx-2"
+                  >
+                    POST
+                  </Button>
                 </Col>
-
-                <ColoredLine color="grey" />
-                <h1
-                  className="d-flex justify-content-center"
-                  style={{ fontSize: "50px" }}
-                >
+                <h1 className="d-flex" style={{ fontSize: "30px" }}>
                   CATEGORY
                 </h1>
-
                 <NavLink
-                  className="d-flex justify-content-center"
+                  className="d-flex ps-5"
                   to="/kreativitas"
-                  style={{ color: "green", fontSize: "30px" }}
+                  style={{ color: "green", fontSize: "20px" }}
                 >
-                  Kreativitas
+                  #Creativity
                 </NavLink>
                 <NavLink
-                  className="d-flex justify-content-center"
+                  className="d-flex ps-5"
                   to="/barang-seharian"
-                  style={{ color: "blue", fontSize: "30px" }}
+                  style={{ color: "blue", fontSize: "20px" }}
                 >
-                  Barang Sehari-Hari
+                  #Daily Goods
                 </NavLink>
-                <ColoredLine color="grey" />
-                <Col style={{}}>
+
+                <Col className="py-5">
                   <h3>Trending</h3>
                   <h5>
                     <ul>
@@ -135,28 +152,26 @@ function Contents() {
                       <li>3</li>
                     </ul>
                   </h5>
-                  <ColoredLine color="grey" />
+
                   <h3>
                     Ipsum et culpa cillum cupidatat voluptate in ut aute mollit.
-                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod quis
-                    incididunt. Deserunt veniam adipisicing officia exercitation
-                    nisi ut magna. Consequat nisi reprehenderit magna dolor
-                    nostrud. Cupidatat culpa incididunt tempor proident qui velit
-                    irure sit nisi reprehenderit ea deserunt. Dolore labore labore
-                    cupidatat excepteur nulla nisi adipisicing et aute nulla.
+                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod
+                    quis incididunt. Deserunt veniam adipisicing officia
+                    exercitation nisi ut magna. Consequat nisi reprehenderit
+                    magna dolor nostrud. Cupidatat culpa incididunt tempor
+                    proident qui velit irure sit nisi reprehenderit ea deserunt.
+                    Dolore labore labore cupidatat excepteur nulla nisi
+                    adipisicing et aute nulla.
                   </h3>
                 </Col>
               </Row>
             </Col>
-            <Col />
           </Row>
         </Container>
       </div>
     );
   } else {
-    return (
-      <h1>Loading</h1>
-    )
+    return <h1>Loading</h1>;
   }
 }
 
