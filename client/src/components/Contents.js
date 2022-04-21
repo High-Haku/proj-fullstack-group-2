@@ -38,7 +38,7 @@ function Contents() {
         <Container fluid style={{}}>
           <Row className="d-flex">
             {contents.data === undefined ? null : (
-              <Col id="divBorder" lg={8} style={{}} className="">
+              <Col id="divBorder" lg={8} style={{}} className="border-end">
                 {contents.data.map((content) => {
                   return (
                     <Row key={content._id}>
@@ -164,14 +164,7 @@ function Contents() {
                   </h5>
 
                   <h3>
-                    Ipsum et culpa cillum cupidatat voluptate in ut aute mollit.
-                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod
-                    quis incididunt. Deserunt veniam adipisicing officia
-                    exercitation nisi ut magna. Consequat nisi reprehenderit
-                    magna dolor nostrud. Cupidatat culpa incididunt tempor
-                    proident qui velit irure sit nisi reprehenderit ea deserunt.
-                    Dolore labore labore cupidatat excepteur nulla nisi
-                    adipisicing et aute nulla.
+                    
                   </h3>
                 </Col>
               </Row>
