@@ -67,6 +67,11 @@
     color: #F0F0F0;
 }
 
+#card-container2:hover {
+	background-color: #dd5800;
+    color: #F0F0F0;
+}
+
 #loader div {
 	width: 17px;
 	height: 17px;
