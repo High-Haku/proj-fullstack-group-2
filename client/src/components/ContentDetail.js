@@ -3,7 +3,7 @@ import { Col, Container, Row, Button } from "react-bootstrap";
 import ProgressBar from "@ramonak/react-progress-bar";
 import "./ContentDetail.css";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { getSingleContent } from "../redux/actions/contentsActions";
 import {
   DollarCircleFilled,
@@ -15,6 +15,11 @@ function ContentDetail() {
   const { id } = useParams();
   const content = useSelector((state) => state.contents);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/support/${content.data._id}`)
+  }
 
   useEffect(() => {
     dispatch(getSingleContent(id));
@@ -77,6 +82,7 @@ function ContentDetail() {
                           <div
                             id="card-container2"
                             className="card card1 h-100"
+                            onClick={handleClick}
                           >
                             <div className="card-body">
                               <p
