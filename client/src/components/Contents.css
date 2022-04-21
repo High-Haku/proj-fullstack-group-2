@@ -1,18 +1,23 @@
-#divBorder {
-  /* border-style: solid;
-  border-color: #41548a;
-  border-width: 25px ;
-  border-radius: 8px; */
-  /* box-shadow: #4d4d4d 10px 10px 10px; */
-  /* border-image-source: url("https://w.wallhaven.cc/full/28/wallhaven-285xwy.jpg");
-  border-image-width: 40px;
-  border-image-slice: 100;
-  border-image-repeat: repeat; */
+.rounded-pill {
+  background-color: #3E497A;
+  color: #F0F0F0;
 }
 
-/* #button-exp{
-  float: right
-} */
+.rounded-pill:hover {
+  background-color: #dd5800;
+  color: #F0F0F0;
+}
+
+.btn-contentpage {
+  background-color: #3E497A;
+  border-radius: 50%;
+  color: #F0F0F0;
+}
+
+.btn-contentpage:hover {
+  background-color: #dd5800;
+  color: #F0F0F0;
+}
 
 video {
   width: 100%;
