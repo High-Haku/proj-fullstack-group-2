@@ -9,7 +9,6 @@ import {
   Card,
   Navbar,
 } from "react-bootstrap";
-import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { getAllContents } from "../redux/actions/contentsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -110,7 +109,8 @@ function Contents() {
                 borderColor: "#41548a",
                 borderWidth: "0px",
                 // boxShadow: "10px 10px 10px 10px #888888",
-                backgroundColor: "white",
+                backgroundImage: "./Config/so-white.png",
+                backgroundSize: "cover",
               }}
               className="rounded d-flex justify-content-center sticky-top overflow-auto"
             >
@@ -157,7 +157,7 @@ function Contents() {
                   <h3>Trending</h3>
                   <h5>
                     <ul>
-                      <li>1</li>
+                      <li><Link to='/'>Trending 1</Link></li>
                       <li>2</li>
                       <li>3</li>
                     </ul>

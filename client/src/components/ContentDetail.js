@@ -23,7 +23,7 @@ function ContentDetail() {
   if (content.data) {
     return (
       <div>
-        <Container className="content-container border-end">
+        <Container className="content-container">
           <Row className="row-col-md-1">
             <Col
               id="left-col"

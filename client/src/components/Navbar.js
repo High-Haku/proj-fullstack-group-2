@@ -79,7 +79,7 @@ function NavbarComponent() {
         <Button variant="outline-warning" className="btn-nav" style={{ marginLeft: 10 }}>
           Post
         </Button>
-        <Button variant="outline-warning" className='btn-nav' style={{ marginLeft: 10 }}>
+        <Button href='/login' variant="outline-warning" className='btn-nav' style={{ marginLeft: 10 }}>
           Login
         </Button>
       </Form>
