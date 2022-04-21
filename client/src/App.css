@@ -3,8 +3,7 @@
 .App {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  /* background-image: linear-gradient(#f1f1f1,#282c34); */
+  background-image: url("https://looneypatterns.com/images/pattern-preview/30.png")
 }
 
 .App-logo {
