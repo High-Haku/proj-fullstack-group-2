@@ -1,4 +1,4 @@
-import { GET_ALL_CONTENTS, GET_SINGLE_CONTENT } from './constants/contentsActionTypes';
+import { GET_ALL_CONTENTS, GET_SINGLE_CONTENT } from './constants/actionTypes';
 import * as api from '../../api';
 
 export const getAllContents = () => async (dispatch) => {
