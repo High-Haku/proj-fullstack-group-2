@@ -1,0 +1,36 @@
+#card-container {
+  border-style: solid;
+  border-color: #21325E;
+  border-width: 2px;
+}
+
+/* .card-title:hover {
+  background:#21325E;
+  color: #F0F0F0;
+} */
+
+#card-container:hover {
+  background:#21325E;
+  color: #F0F0F0;
+}
+
+/* .card1:hover .list-group-item{
+  background:#00ffb6 !important
+} */
+
+#disclaimer-container {
+  border-style: solid;
+  border-color: #21325E;
+  border-width: 2px
+}
+
+.btn-select-reward {
+  background-color: #3E497A;
+  color: #F0F0F0;
+  border-radius: 25px;
+}
+
+.btn-select-reward:hover {
+  background-color: #dd5800;
+  color: #F0F0F0;
+}

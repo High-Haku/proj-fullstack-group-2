@@ -1,0 +1,6 @@
+// Contents
+export const GET_ALL_CONTENTS = "GET_ALL_CONTENTS";
+export const GET_SINGLE_CONTENT = "GET_SINGLE_CONTENT";
+
+// Support
+export const GET_SINGLE_SUPPORT = "GET_SINGLE_SUPPORT";

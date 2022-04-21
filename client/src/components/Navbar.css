@@ -1,0 +1,17 @@
+#nav-body {
+    background-color: #21325E;
+}
+
+.btn-nav {
+    background-color: #3E497A;
+    color: #F0F0F0;
+}
+
+.btn-nav:hover {
+    background-color: #dd5800;
+    color: #F0F0F0;
+}
+
+#app-name {
+    color: #F0F0F0;
+}
