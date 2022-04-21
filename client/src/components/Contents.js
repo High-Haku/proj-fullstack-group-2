@@ -9,38 +9,27 @@ import {
   Card,
   Navbar,
 } from "react-bootstrap";
-import CloudinaryUploadWidget from "../Config/CloudinaryUploadWidget";
 import { getAllContents } from "../redux/actions/contentsActions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ReadFilled, InteractionFilled, LikeFilled } from "@ant-design/icons";
 
-const ColoredLine = ({ color }) => (
-  <hr
-    style={{
-      color,
-      backgroundColor: color,
-      height: 3,
-    }}
-  />
-);
-
 function Contents() {
   const dispatch = useDispatch();
-  const contents = useSelector((state) => state.contents);
+  const { contents } = useSelector((state) => state.contents);
+  console.log(contents);
 
   useEffect(() => {
     dispatch(getAllContents());
   }, [dispatch]);
 
-  if (contents.data) {
+  if (contents.length > 0) {
     return (
       <div>
         <Container fluid style={{}}>
           <Row className="d-flex">
-            {contents.data === undefined ? null : (
               <Col id="divBorder" lg={8} style={{}} className="">
-                {contents.data.map((content) => {
+                {contents.map((content) => {
                   return (
                     <Row key={content._id}>
                       <Col className="d-flex justify-content-center pt-4">
@@ -101,7 +90,6 @@ function Contents() {
                 })}
                 <Col />
               </Col>
-            )}
             <Col
               lg={4}
               style={{
@@ -157,14 +145,14 @@ function Contents() {
                   <h3>Trending</h3>
                   <h5>
                     <ul>
-                      <li>1 unique product for daily use</li>
-                      <li>2</li>
-                      <li>3</li>
+                      <li>1. unique product for daily use</li>
+                      <li>2. lifehacks 101</li>
+                      <li>3. ultra soft toothbrush with micro nano bristles | Easy Life </li>
                     </ul>
                   </h5>
 
                   <h3>
-                    Check out our latest videos
+                    Check out our latest videos!
                   </h3>
                 </Col>
               </Row>

@@ -13,7 +13,7 @@ module.exports = {
 
   getByIDReward: async (req, res) => {
     const id = req.params.id;
-    const reward = await Rewards.findById(id);
+    const reward = await Rewards.findById(id, "-__v").populate("content", "-__v");
 
     try {
       res.json(reward);
