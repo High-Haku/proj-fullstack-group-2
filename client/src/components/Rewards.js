@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "./Rewards.css";
 import { getSingleContent } from "../redux/actions/contentsActions";
 import { Link, useParams } from "react-router-dom";
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 
 function Rewards() {
   const { id } = useParams();
@@ -14,11 +14,7 @@ function Rewards() {
     dispatch(getSingleContent(id));
   }, [dispatch]);
 
-  const handlePayment = (id) => {
-    console.log(id);
-  }
-
-  if (content) {
+  if (content.reward) {
     return (
       <div className="container p-5">
         <div className="row">
@@ -36,15 +32,16 @@ function Rewards() {
                       <span className="h2">{item.price}</span>IDR
                       <br />
                       <p>{item.reward}</p>
-                      <div className="d-grid my-3">
-                        <Button
-                          className="btn-select-reward"
-                          variant="outline-warning"
-                        >
-                          <Link to={`/support/payment/${item._id}`}>
+                      <div className=" my-3">
+                        <Link to={`/support/payment/${item._id}`}>
+                          <Button
+                            className="btn-select-reward btn-block"
+                            variant="outline-warning"
+                            style={{width:'310px'}}
+                          >
                             Select
-                          </Link>
-                        </Button>
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -56,23 +53,30 @@ function Rewards() {
             <div id="disclaimer-container" className="sticky-top">
               <div className="ms-2">
                 <h2>Disclaimer</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Inventore vitae consectetur, cupiditate totam quidem esse
-                  nesciunt voluptas qui iure ratione officia?
-                </p>
+                <p>We're here to share ideas and have fun, therefore</p>
               </div>
               <div className="ms-2">
                 <h2>FAQ</h2>
-                <p>
-                  1. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Facere, adipisci!
-                </p>
-                <p>
-                  2. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-                <p>3. Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                <p>4. Lorem ipsum dolor sit amet.</p>
+                <ul>
+                  For fundraising:
+                  <li>Set your fundraiser goal</li>
+                  <li>Tell your story</li>
+                  <li>Add a picture or video</li>
+                  <Button>Watch a video tutorial</Button>
+                </ul>
+                <ul>
+                  Share with friends:
+                  <li>Send Emails</li>
+                  <li>Send text messages</li>
+                  <li>Share on social media</li>
+                  <Button>Watch a video tutorial</Button>
+                </ul>
+                <ul>
+                  Managing your donations:
+                  <li>Accept donations</li>
+                  <li>Thank donors</li>
+                  <li>Withdraw funds</li>
+                </ul>
               </div>
             </div>
           </div>

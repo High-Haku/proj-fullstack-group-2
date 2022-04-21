@@ -57,7 +57,7 @@ function Contents() {
                           </Card.Title>
                           <Card.Body className="text-center">
                             <div id="vid-container">
-                              <video src={content.video} controls muted />
+                              <video src={content.video} autoplay="autoplay" controls muted loop />
                             </div>
                             <Button
                               variant="outline-warning"
@@ -109,19 +109,20 @@ function Contents() {
                     variant="outline-warning"
                     className="rounded-pill mx-2"
                   >
-                    LOGIN
+                    <Link className="linkbutt" to="/login">LOGIN</Link>
+                    
                   </Button>
                   <Button
                     variant="outline-warning"
                     className="rounded-pill mx-2"
                   >
-                    REGISTER
+                    <Link className="linkbutt" to="/register">REGISTER</Link>
                   </Button>
                   <Button
                     variant="outline-warning"
                     className="rounded-pill mx-2"
                   >
-                    POST
+                    <Link className="linkbutt" to="/">POST</Link>
                   </Button>
                 </Col>
                 <h1 className="d-flex" style={{ fontSize: "30px" }}>
@@ -145,16 +146,16 @@ function Contents() {
                 <Col className="py-5">
                   <h3>Trending</h3>
                   <h5>
-                    <ul>
-                      <li><Link to='/'>Trending 1</Link></li>
-                      <li>2</li>
-                      <li>3</li>
+                    <ul style={{color:"#537dbd",textDecoration:"underline"}}>
+                      <li style={{}}> unique product for daily use</li>
+                      <li> lifehacks 101</li>
+                      <li> ultra soft toothbrush with micro nano bristles | Easy Life </li>
                     </ul>
                   </h5>
 
-                  <h3>
-                    
-                  </h3>
+                  <p className="d-flex justify-content-center pt-5">
+                  © 2022 Pitchpls!
+                  </p>
                 </Col>
               </Row>
             </Col>
