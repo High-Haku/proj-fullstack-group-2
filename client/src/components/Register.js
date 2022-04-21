@@ -35,7 +35,6 @@ const Register = () => {
         Swal.fire({
           icon: 'success',
           title: (message),
-          text: 'Something went wrong!',
           color: '3E497A',
           backdrop: 'rgb(62, 73, 122)',
         })
@@ -44,7 +43,6 @@ const Register = () => {
         Swal.fire({
           icon: 'error',
           title: (message),
-          text: 'Something went wrong!',
           color: '3E497A',
           backdrop: 'rgb(62, 73, 122)',
         })
@@ -52,7 +50,6 @@ const Register = () => {
         Swal.fire({
           icon: 'error',
           title: (message),
-          text: 'Something went wrong!',
           color: '3E497A',
           backdrop: 'rgb(62, 73, 122)',
         })

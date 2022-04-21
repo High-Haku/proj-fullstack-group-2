@@ -10,7 +10,7 @@ router.get("/", getAllContent)
 router.get("/:id", getById)
 router.put("/:id", editContent)
 router.delete("/:id", deleteContent)
-router.post("/create-a-project",upload.single("video"), addContent)
+router.post("/post",upload.single("video"), addContent)
 
 
 module.exports = router

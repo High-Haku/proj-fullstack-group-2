@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import "./Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import Swal from "sweetalert2";
@@ -111,7 +111,7 @@ const Login = ({}) => {
                           >
                             Don't have an account yet?
                             <br />
-                            <a href="#0" style={{ color: "#F0F0F0" }}>
+                            <a href="/register" style={{ color: "#F0F0F0" }}>
                               Register here!
                             </a>
                           </p>
