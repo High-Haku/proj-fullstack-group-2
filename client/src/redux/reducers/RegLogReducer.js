@@ -3,10 +3,7 @@ import { POST_REGISTER } from "../actions/RegLogAction";
 const initialState = {
     postRegisterResult: false,
     postRegisterLoading: false,
-    postLoginResult: false,
-    postLoginLoading: false,
-    getUsersResult: false,
-    getUserLoading: false
+    postRegisterError: false
 }
 
 const accountSys = (state = initialState, action) => {
@@ -15,7 +12,8 @@ const accountSys = (state = initialState, action) => {
             return{
                 ...state,
                 postRegisterResult: action.payload.data,
-                postRegisterLoading: action.payload.loading
+                postRegisterLoading: action.payload.loading,
+                postRegisterError: action.payload.error
             }
         // case POST_LOGIN:
         //     return{
