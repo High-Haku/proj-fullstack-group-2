@@ -30,33 +30,43 @@ function Contents() {
         <Container fluid style={{}}>
           <Row className="pt-5 d-flex text-center">
             <Col />
-            {contents.data === undefined ? null
-              : <Col id="divBorder" lg={7} style={{}} className="">
-                {contents.data.map(content => {
+            {contents.data === undefined ? null : (
+              <Col id="divBorder" lg={7} style={{}} className="">
+                {contents.data.map((content) => {
                   return (
                     <Row key={content._id}>
-                      <Row >
+                      <Row>
                         <Col>
                           <video src={content.video} controls muted />
                         </Col>
                         <Col>
-                          <Button style={{ position: "relative", top: "700px" }}>
+                          <Button
+                            style={{ position: "relative", top: "700px" }}
+                          >
                             Like
                           </Button>
-                          <Button style={{ position: "relative", top: "700px" }}>
-                            <Link to={`/contents/${content._id}`}> Detail </Link>
+                          <Button
+                            style={{ position: "relative", top: "700px" }}
+                          >
+                            <Link to={`/contents/${content._id}`}>
+                              {" "}
+                              Detail{" "}
+                            </Link>
                           </Button>
-                          <Button style={{ position: "relative", top: "700px" }}>
+                          <Button
+                            style={{ position: "relative", top: "700px" }}
+                          >
                             Share
                           </Button>
                         </Col>
                       </Row>
                       <ColoredLine color="grey" />
                     </Row>
-                  )
+                  );
                 })}
                 <Col />
-              </Col>}
+              </Col>
+            )}
             <Col />
             <Col
               lg={3}
@@ -138,12 +148,13 @@ function Contents() {
                   <ColoredLine color="grey" />
                   <h3>
                     Ipsum et culpa cillum cupidatat voluptate in ut aute mollit.
-                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod quis
-                    incididunt. Deserunt veniam adipisicing officia exercitation
-                    nisi ut magna. Consequat nisi reprehenderit magna dolor
-                    nostrud. Cupidatat culpa incididunt tempor proident qui velit
-                    irure sit nisi reprehenderit ea deserunt. Dolore labore labore
-                    cupidatat excepteur nulla nisi adipisicing et aute nulla.
+                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod
+                    quis incididunt. Deserunt veniam adipisicing officia
+                    exercitation nisi ut magna. Consequat nisi reprehenderit
+                    magna dolor nostrud. Cupidatat culpa incididunt tempor
+                    proident qui velit irure sit nisi reprehenderit ea deserunt.
+                    Dolore labore labore cupidatat excepteur nulla nisi
+                    adipisicing et aute nulla.
                   </h3>
                 </Col>
               </Row>
@@ -155,8 +166,18 @@ function Contents() {
     );
   } else {
     return (
-      <h1>Loading</h1>
-    )
+      <div id="overlay-loader">
+        <div id="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
   }
 }
 
