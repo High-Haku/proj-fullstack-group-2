@@ -44,12 +44,12 @@ function App() {
           <Route path="/support/payment/:id" element={
             <Elements stripe={stripePromise}><Payment /></Elements>
           } />
+          <Route path="*" element={<NotFound />} />
         </Route>
 
-        <Route path="*" element={<NotFound />} />
         <Route path="/form" element={<FormUpload />} />
+        
 
-        <Route path='/create-a-post' element={<Post />} />
 
       </Routes>
     </div>
