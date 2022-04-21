@@ -55,16 +55,18 @@ function Rewards() {
               <div className="ms-2">
                 <h2>Disclaimer</h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Inventore vitae consectetur, cupiditate totam quidem esse
-                  nesciunt voluptas qui iure ratione officia?
+                  We're here to share ideas and have fun, therefore 
                 </p>
               </div>
               <div className="ms-2">
                 <h2>FAQ</h2>
                 <p>
-                  1. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Facere, adipisci!
+                  1. For fundraising:
+                 - Set your fundraiser goal
+                 - Tell your story
+                 - Add a picture or video
+                 <Button
+                  Watch a video tutorial />
                 </p>
                 <p>
                   2. Lorem ipsum dolor sit amet consectetur adipisicing elit.

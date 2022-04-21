@@ -157,21 +157,14 @@ function Contents() {
                   <h3>Trending</h3>
                   <h5>
                     <ul>
-                      <li>1</li>
+                      <li>1 unique product for daily use</li>
                       <li>2</li>
                       <li>3</li>
                     </ul>
                   </h5>
 
                   <h3>
-                    Ipsum et culpa cillum cupidatat voluptate in ut aute mollit.
-                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod
-                    quis incididunt. Deserunt veniam adipisicing officia
-                    exercitation nisi ut magna. Consequat nisi reprehenderit
-                    magna dolor nostrud. Cupidatat culpa incididunt tempor
-                    proident qui velit irure sit nisi reprehenderit ea deserunt.
-                    Dolore labore labore cupidatat excepteur nulla nisi
-                    adipisicing et aute nulla.
+                    Check out our latest videos
                   </h3>
                 </Col>
               </Row>
