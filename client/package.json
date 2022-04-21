@@ -6,6 +6,7 @@
     "@ant-design/icons": "^4.7.0",
     "@cloudinary/react": "^1.3.0",
     "@cloudinary/url-gen": "^1.7.0",
+    "@ramonak/react-progress-bar": "^4.4.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",

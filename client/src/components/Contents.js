@@ -46,19 +46,30 @@ function Contents() {
                       <Col className="d-flex justify-content-center pt-4">
                         <Card style={{ width: "25em", borderColor: "white" }}>
                           <Card.Title className="d-flex align-items-center">
-                            <Navbar.Brand className="d-flex align-items-center" href="/profile">
+                            <Navbar.Brand
+                              className="d-flex align-items-center"
+                              href="/profile"
+                            >
                               <img
                                 alt=""
                                 src="https://flyinryanhawks.org/wp-content/uploads/2016/08/profile-placeholder.png"
                                 width="45"
                                 height="45"
                                 className="d-inline-block align-top"
-                                style={{borderRadius: "50%"}}
-                              /><p className="my-0 p-2" style={{color: "#272727"}}>{content.userID.name}</p>
+                                style={{ borderRadius: "50%" }}
+                              />
+                              <p
+                                className="my-0 p-2"
+                                style={{ color: "#272727" }}
+                              >
+                                {content.userID.name}
+                              </p>
                             </Navbar.Brand>
                           </Card.Title>
                           <Card.Body className="text-center">
-                            <video src={content.video} controls muted />
+                            <div id="vid-container">
+                              <video src={content.video} controls muted />
+                            </div>
                             <Button
                               variant="outline-warning"
                               className="btn-contentpage mx-2"
@@ -91,7 +102,6 @@ function Contents() {
                 <Col />
               </Col>
             )}
-
             <Col
               lg={4}
               style={{
@@ -171,7 +181,19 @@ function Contents() {
       </div>
     );
   } else {
-    return <h1>Loading</h1>;
+    return (
+      <div id="overlay-loader">
+        <div id="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    );
   }
 }
 
