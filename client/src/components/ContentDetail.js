@@ -18,7 +18,7 @@ function ContentDetail() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/support/${content.data._id}`)
+    navigate(`/support/${content._id}`)
   }
 
   useEffect(() => {

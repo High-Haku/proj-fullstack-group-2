@@ -18,7 +18,7 @@ function Rewards() {
     console.log(id);
   }
 
-  if (content) {
+  if (content.reward) {
     return (
       <div className="container p-5">
         <div className="row">
