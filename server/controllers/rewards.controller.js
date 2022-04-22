@@ -28,7 +28,8 @@ module.exports = {
     try {
       await Rewards.create(data)
       res.json({
-        message: "Reward Created"
+        message: "Reward Created",
+        data: data
       })
     } catch (error) {
       console.log(error.message);
@@ -41,6 +42,10 @@ module.exports = {
 
     try {
       await Rewards.findByIdAndUpdate(id, data);
+      res.json({
+        message: "Reward updated",
+        data: data
+      })
     } catch (error) {
       console.log(error.message);
     }
@@ -51,6 +56,9 @@ module.exports = {
 
     try {
       await Rewards.findByIdAndDelete(id);
+      res.json({
+        message: "Reward updated"
+      })
     } catch (error) {
       console.log(error.message)
     }
