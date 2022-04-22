@@ -65,13 +65,18 @@ module.exports = {
   },
 
   loginUser: async (req, res) => {
+    if (!validator.isEmail(req.body.email)){
+    return res.json({ message: "Invalid Email" })}
+    else{
+
     const user = await UserModel.findOne({ email: req.body.email });
-    const passwordVerify = await bcrypt.compare(
+    const passwordVerify = await bcrypt.compareSync(
       req.body.password,
       user.password
     );
 
     try {
+      
       if (req.body.email === user.email && passwordVerify) {
         const accessToken = jwt.sign(
           { email: user.email, role: user.role, id: user._id },
@@ -90,8 +95,8 @@ module.exports = {
         res.json({ message: "email / password invalid" });
       }
     } catch (err) {
-      res.json({ msg: "email not found", err });
-    }
+      res.json({ message: "email not found", err });
+    }}
   },
 
   updateUser: async (req, res) => {

@@ -17,9 +17,9 @@
     border-radius: 25px;
     border-style: solid;
     border-color: #21325E;
-    border-width: 2px;
+    /* border-width: 2px; */
     height:fit-content;
-    box-shadow: 10px 10px 5px
+    /* box-shadow: 10px 10px 5px */
 }
 
 .btn-contentd {

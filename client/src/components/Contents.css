@@ -3,6 +3,11 @@
   color: #F0F0F0;
 }
 
+.linkbutt {
+	color: #F0F0F0;
+	text-decoration: none;
+}
+
 .rounded-pill:hover {
   background-color: #dd5800;
   color: #F0F0F0;

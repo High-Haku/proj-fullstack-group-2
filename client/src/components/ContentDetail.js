@@ -28,14 +28,14 @@ function ContentDetail() {
   if (content.video) {
     return (
       <div>
-        <Container className="content-container border-end">
+        <Container className="content-container">
           <Row className="row-col-md-1">
             <Col
               id="left-col"
               className="col-md col-xs justify-content-center sticky-top"
             >
               <Col id="vid-container" className="col-md-8 pt-1">
-                <video src={content.video} controls muted />
+                <video src={content.video} autoplay="autoplay" controls muted loop/>
               </Col>
             </Col>
             <Col id="right-col" className="col-md col-xs order-third mt-4">
@@ -61,10 +61,10 @@ function ContentDetail() {
               <hr />
               <div>
                 <label className="p-1" style={{ fontWeight: "bold" }}>
-                  Goals Rp. 5.000.000
+                  Goals
                 </label>
                 <ProgressBar
-                  completed={64}
+                  completed={43}
                   customLabel={ProgressBar.completed}
                   // maxCompleted={5000000}
                   bgColor="#F1D00A"

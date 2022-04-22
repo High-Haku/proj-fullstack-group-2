@@ -28,7 +28,7 @@ function Contents() {
       <div>
         <Container fluid style={{}}>
           <Row className="d-flex">
-              <Col id="divBorder" lg={8} style={{}} className="">
+              <Col id="divBorder" lg={8} style={{}} className="border-end">
                 {contents.map((content) => {
                   return (
                     <Row key={content._id}>
@@ -57,7 +57,7 @@ function Contents() {
                           </Card.Title>
                           <Card.Body className="text-center">
                             <div id="vid-container">
-                              <video src={content.video} controls muted />
+                              <video src={content.video} autoplay="autoplay" controls muted loop />
                             </div>
                             <Button
                               variant="outline-warning"
@@ -98,7 +98,8 @@ function Contents() {
                 borderColor: "#41548a",
                 borderWidth: "0px",
                 // boxShadow: "10px 10px 10px 10px #888888",
-                backgroundColor: "white",
+                backgroundImage: "./Config/so-white.png",
+                backgroundSize: "cover",
               }}
               className="rounded d-flex justify-content-center sticky-top overflow-auto"
             >
@@ -108,19 +109,20 @@ function Contents() {
                     variant="outline-warning"
                     className="rounded-pill mx-2"
                   >
-                    LOGIN
+                    <Link className="linkbutt" to="/login">LOGIN</Link>
+                    
                   </Button>
                   <Button
                     variant="outline-warning"
                     className="rounded-pill mx-2"
                   >
-                    REGISTER
+                    <Link className="linkbutt" to="/register">REGISTER</Link>
                   </Button>
                   <Button
                     variant="outline-warning"
                     className="rounded-pill mx-2"
                   >
-                    POST
+                    <Link className="linkbutt" to="/">POST</Link>
                   </Button>
                 </Col>
                 <h1 className="d-flex" style={{ fontSize: "30px" }}>
@@ -144,23 +146,16 @@ function Contents() {
                 <Col className="py-5">
                   <h3>Trending</h3>
                   <h5>
-                    <ul>
-                      <li>1</li>
-                      <li>2</li>
-                      <li>3</li>
+                    <ul style={{color:"#537dbd",textDecoration:"underline"}}>
+                      <li style={{}}> unique product for daily use</li>
+                      <li> lifehacks 101</li>
+                      <li> ultra soft toothbrush with micro nano bristles | Easy Life </li>
                     </ul>
                   </h5>
 
-                  <h3>
-                    Ipsum et culpa cillum cupidatat voluptate in ut aute mollit.
-                    Aliquip ullamco adipisicing ipsum do nisi nostrud eiusmod
-                    quis incididunt. Deserunt veniam adipisicing officia
-                    exercitation nisi ut magna. Consequat nisi reprehenderit
-                    magna dolor nostrud. Cupidatat culpa incididunt tempor
-                    proident qui velit irure sit nisi reprehenderit ea deserunt.
-                    Dolore labore labore cupidatat excepteur nulla nisi
-                    adipisicing et aute nulla.
-                  </h3>
+                  <p className="d-flex justify-content-center pt-5">
+                  © 2022 Pitchpls!
+                  </p>
                 </Col>
               </Row>
             </Col>
