@@ -27,6 +27,10 @@ module.exports = {
 
     try {
       await Transactions.create(data);
+      res.json({
+        message: "Transaction Created",
+        data: data
+      });
     } catch (error) {
       console.log(error.message);
     }
@@ -38,6 +42,10 @@ module.exports = {
 
     try {
       await Transactions.findByIdAndUpdate(id, data)
+      res.json({
+        message: "Transaction Updated",
+        data: data
+      })
     } catch (error) {
       console.log(error.message);
     }
@@ -48,6 +56,9 @@ module.exports = {
 
     try {
       await Transactions.findByIdAndDelete(id);
+      res.json({
+        message: "Transaction Deleted"
+      })
     } catch (error) {
       console.log(error.message);
     }
