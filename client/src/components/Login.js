@@ -22,7 +22,7 @@ const Login = ({}) => {
   };
 
   const handleSubmit = () => {
-    axios.post("http://localhost:5000/login", user)
+    axios.post("https://pitchpls.herokuapp.com/login", user)
     .then((res) => {
       const message = res.data.message
 

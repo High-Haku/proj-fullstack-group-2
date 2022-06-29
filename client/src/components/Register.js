@@ -27,7 +27,7 @@ const Register = () => {
   }
 
   const handleSubmit = (e) => {
-    axios.post("http://localhost:5000/register", user)
+    axios.post("https://pitchpls.herokuapp.com/register", user)
     .then((res)=>{
       const message = res.data.message
       

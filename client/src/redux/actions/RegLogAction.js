@@ -14,7 +14,7 @@ export const postRegister = (data) => {
 
         axios({
             method: "POST",
-            url: "http://localhost:5000/register",
+            url: "https://pitchpls.herokuapp.com/register",
             data: data
         })
         .then((response)=>{
