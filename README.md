@@ -20,4 +20,4 @@ https://documenter.getpostman.com/view/19979965/UyrAFx7y
 
 To run this project please visit this link
 
-https://pitchpls.netlify.app/
+https://pitchplss.netlify.app/
