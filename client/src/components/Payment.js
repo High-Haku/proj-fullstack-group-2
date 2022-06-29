@@ -22,7 +22,7 @@ function Payment() {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const data = await axios.post("http://localhost:5000/payment", { amount: support.price });
+    const data = await axios.post("https://pitchpls.herokuapp.com/payment", { amount: support.price });
     const clientSecret = data.data.clientSecret;
 
     const payload = await stripe.confirmCardPayment(clientSecret, {
