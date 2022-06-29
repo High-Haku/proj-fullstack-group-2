@@ -20,7 +20,7 @@ function Post() {
   };
 
   const handleSubmit = () => {
-    axios.post("http://localhost:5000/create-a-project", post).then((res) => {
+    axios.post("https://pitchpls.herokuapp.com/create-a-project", post).then((res) => {
       alert(res.data.message);
 
       navigate("/");
